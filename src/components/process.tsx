@@ -1,140 +1,88 @@
+const steps = [
+  {
+    number: "01",
+    title: "Alignement",
+    text: "Atelier court pour cadrer objectifs, contraintes et indicateurs de succès.",
+  },
+  {
+    number: "02",
+    title: "Production",
+    text: "Design modulaire, itérations rapides et validations continues.",
+  },
+  {
+    number: "03",
+    title: "Livraison",
+    text: "Fichiers propres, documentation et accompagnement de mise en ligne.",
+  },
+];
+
+const stats = [
+  { label: "Projets livrés", value: "40+" },
+  { label: "Délai moyen", value: "5 semaines" },
+  { label: "Satisfaction", value: "4,9/5" },
+  { label: "Formats", value: "Web · Brand" },
+];
+
 export default function Process() {
   return (
-    <section
-      id="process"
-      style={{ 
-        scrollMarginTop: "90px",
-        padding: "96px 24px",
-        backgroundColor: "#ffffff",
-      }}
-    >
-      <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-        {/* Titre */}
-        <div style={{ textAlign: "center", marginBottom: 72 }}>
-          <h2
-            style={{
-              fontSize: 40,
-              fontWeight: 900,
-              color: "#0b1f33",
-              marginBottom: 16,
-            }}
-          >
-            Notre processus
-          </h2>
-          <p
-            style={{
-              fontSize: 18,
-              color: "#425466",
-              maxWidth: 700,
-              margin: "0 auto",
-              lineHeight: 1.6,
-            }}
-          >
-            Une collaboration claire, structurée et orientée résultats pour
-            transformer vos idées en solutions numériques concrètes.
+    <section id="approach" style={{ padding: "96px 24px", backgroundColor: "#f8f6f2" }}>
+      <div style={{ maxWidth: 1160, margin: "0 auto" }}>
+        <div style={{ textAlign: "center", marginBottom: 48 }}>
+          <p style={{ textTransform: "uppercase", letterSpacing: "0.22em", fontSize: 12, color: "#5c6b79" }}>
+            Méthode
+          </p>
+          <h2 style={{ fontSize: 38, margin: "16px 0" }}>Un process clair, sans frictions.</h2>
+          <p style={{ color: "#5c6b79", maxWidth: 640, margin: "0 auto", lineHeight: 1.6 }}>
+            Nous privilégions une structure simple : cadrer, produire, transmettre. Chaque phase est
+            documentée et compréhensible pour vos équipes.
           </p>
         </div>
 
-        {/* Étapes */}
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-            gap: 32,
+            gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+            gap: 20,
           }}
         >
-          <Step
-            number="01"
-            title="Analyse du besoin"
-            text="Nous échangeons avec vous afin de comprendre vos objectifs, vos contraintes et vos attentes métier."
-          />
-          <Step
-            number="02"
-            title="Proposition de solution"
-            text="Nous définissons une solution technique adaptée, claire et réaliste, en accord avec votre budget."
-          />
-          <Step
-            number="03"
-            title="Développement & mise en œuvre"
-            text="Nous concevons et développons la solution en respectant les bonnes pratiques et les délais convenus."
-          />
-          <Step
-            number="04"
-            title="Suivi & accompagnement"
-            text="Nous assurons le suivi, la maintenance et l’évolution de la solution selon vos besoins."
-          />
+          {steps.map((step) => (
+            <div
+              key={step.number}
+              style={{
+                backgroundColor: "#ffffff",
+                borderRadius: 24,
+                padding: 28,
+                border: "1px solid rgba(16, 20, 24, 0.08)",
+                boxShadow: "0 20px 50px rgba(16, 20, 24, 0.08)",
+              }}
+            >
+              <div style={{ fontSize: 14, color: "#ff7a59", fontWeight: 700 }}>{step.number}</div>
+              <h3 style={{ margin: "12px 0 10px", fontSize: 20 }}>{step.title}</h3>
+              <p style={{ margin: 0, color: "#5c6b79", lineHeight: 1.6 }}>{step.text}</p>
+            </div>
+          ))}
         </div>
 
-        {/* Call to action */}
-        <div style={{ textAlign: "center", marginTop: 72 }}>
-          <a
-            href="#contact"
-            style={{
-              display: "inline-block",
-              backgroundColor: "#f59e0b",
-              color: "white",
-              padding: "14px 28px",
-              borderRadius: 999,
-              fontWeight: 800,
-              fontSize: 16,
-              textDecoration: "none",
-            }}
-          >
-            Démarrer un projet
-          </a>
+        <div
+          style={{
+            marginTop: 48,
+            backgroundColor: "#101418",
+            borderRadius: 28,
+            padding: "28px 32px",
+            color: "#fff",
+            display: "grid",
+            gap: 20,
+            gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
+          }}
+        >
+          {stats.map((stat) => (
+            <div key={stat.label}>
+              <div style={{ fontSize: 22, fontWeight: 700 }}>{stat.value}</div>
+              <div style={{ fontSize: 13, color: "rgba(255,255,255,0.65)" }}>{stat.label}</div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
-  );
-}
-
-function Step({
-  number,
-  title,
-  text,
-}: {
-  number: string;
-  title: string;
-  text: string;
-}) {
-  return (
-    <div
-      style={{
-        backgroundColor: "#f8fafc",
-        borderRadius: 20,
-        padding: 32,
-        boxShadow: "0 20px 40px rgba(15, 23, 42, 0.08)",
-      }}
-    >
-      <div
-        style={{
-          fontSize: 32,
-          fontWeight: 900,
-          color: "#f59e0b",
-          marginBottom: 12,
-        }}
-      >
-        {number}
-      </div>
-      <h3
-        style={{
-          fontSize: 20,
-          fontWeight: 800,
-          color: "#0b1f33",
-          marginBottom: 10,
-        }}
-      >
-        {title}
-      </h3>
-      <p
-        style={{
-          fontSize: 15,
-          color: "#425466",
-          lineHeight: 1.6,
-        }}
-      >
-        {text}
-      </p>
-    </div>
   );
 }
