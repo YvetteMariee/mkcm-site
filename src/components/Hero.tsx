@@ -104,7 +104,13 @@ export default function Hero() {
               display: "grid",
               gap: 20,
             }}
+            className="card-hover"
           >
+            <img
+              src="/illustrations/hero.svg"
+              alt=""
+              style={{ width: "100%", borderRadius: 20 }}
+            />
             <div style={{ display: "grid", gap: 8 }}>
               <span style={{ fontSize: 12, textTransform: "uppercase", letterSpacing: "0.18em", color: "#5c6b79" }}>
                 Focus actuel
