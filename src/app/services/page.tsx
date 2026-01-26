@@ -45,14 +45,36 @@ const serviceSections = [
   },
 ];
 
-const collaborationSteps = [
+const stats = [
+  { value: "+20", label: "Sites e-commerce réalisés", image: "/illustrations/stat-commerce.svg" },
+  { value: "+80", label: "Branding graphiques réalisés", image: "/illustrations/stat-branding.svg" },
+  { value: "+30", label: "Applications web réalisées", image: "/illustrations/stat-web.svg" },
+  { value: "+15", label: "Applications mobiles réalisées", image: "/illustrations/stat-mobile.svg" },
+];
+
+const aboutCards = [
+  {
+    title: "Notre mission",
+    text:
+      "Accompagner vos projets digitaux avec une vision claire, une exécution soignée et des résultats mesurables.",
+    image: "/illustrations/mission.svg",
+  },
+  {
+    title: "Nos objectifs",
+    text:
+      "Apporter des solutions fiables et évolutives, adaptées à vos enjeux de communication et de croissance.",
+    image: "/illustrations/objectives.svg",
+  },
+];
+
+const processCards = [
   {
     title: "Découvrir",
-    text: "Nous explorons votre vision, réfléchissons à vos idées et apprenons les besoins de votre entreprise.",
+    text: "Nous explorons votre vision, réfléchissons à vos idées et apprenons vos besoins.",
   },
   {
     title: "Conseiller",
-    text: "Nous proposons des solutions qui alignent vos objectifs avec les besoins de vos clients.",
+    text: "Nous proposons des solutions qui alignent vos objectifs avec vos ressources.",
   },
   {
     title: "Développer",
@@ -60,7 +82,7 @@ const collaborationSteps = [
   },
   {
     title: "Analyser",
-    text: "Nous suivons et testons vos KPI pour analyser les performances après mise en œuvre.",
+    text: "Nous suivons et testons vos KPI pour analyser les performances.",
   },
   {
     title: "Optimiser",
@@ -68,11 +90,17 @@ const collaborationSteps = [
   },
 ];
 
-const stats = [
-  { value: "+20", label: "Sites e-commerce réalisés", image: "/illustrations/stat-commerce.svg" },
-  { value: "+80", label: "Branding graphiques réalisés", image: "/illustrations/stat-branding.svg" },
-  { value: "+30", label: "Applications web réalisées", image: "/illustrations/stat-web.svg" },
-  { value: "+15", label: "Applications mobiles réalisées", image: "/illustrations/stat-mobile.svg" },
+const trustLogos = [
+  "CADViewer",
+  "Trovavia",
+  "Wizup",
+  "Origame",
+  "Discover",
+  "MyNO7",
+  "Digital Success",
+  "Cooltchop",
+  "PKF",
+  "Privethique",
 ];
 
 export const metadata = {
@@ -83,7 +111,7 @@ export const metadata = {
 export default function ServicesPage() {
   return (
     <main>
-      <section style={{ backgroundColor: "#ffffff" }}>
+      <section id="collaboration" style={{ backgroundColor: "#ffffff" }}>
         <div style={{ maxWidth: 1160, margin: "0 auto", padding: "96px 24px", display: "grid", gap: 48, gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", alignItems: "center" }}>
           <div>
             <h1 style={{ fontSize: 44, margin: 0, lineHeight: 1.1, color: "#101418" }}>
@@ -154,18 +182,62 @@ export default function ServicesPage() {
         </section>
       ))}
 
-      <section id="collaboration" style={{ backgroundColor: "#ffffff" }}>
+      <section style={{ backgroundColor: "#ffffff" }}>
+        <div style={{ maxWidth: 1160, margin: "0 auto", padding: "72px 24px" }}>
+          <div style={{ textAlign: "center" }}>
+            <p style={{ textTransform: "uppercase", letterSpacing: "0.22em", fontSize: 12, color: "#5c6b79" }}>
+              En savoir plus sur nous
+            </p>
+            <h2 style={{ fontSize: 32, margin: "16px 0" }}>Un accompagnement fiable et humain.</h2>
+          </div>
+          <div
+            style={{
+              marginTop: 32,
+              display: "grid",
+              gap: 24,
+              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+            }}
+          >
+            {aboutCards.map((card) => (
+              <div
+                key={card.title}
+                style={{
+                  backgroundColor: "#f8f6f2",
+                  borderRadius: 24,
+                  padding: 28,
+                  border: "1px solid rgba(16, 20, 24, 0.08)",
+                  display: "grid",
+                  gap: 16,
+                  textAlign: "center",
+                }}
+                className="card-hover"
+              >
+                <img src={card.image} alt="" style={{ width: "100%", maxWidth: 220, margin: "0 auto" }} />
+                <h3 style={{ margin: 0, fontSize: 20 }}>{card.title}</h3>
+                <p style={{ margin: 0, color: "#5c6b79", lineHeight: 1.6 }}>{card.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section style={{ backgroundColor: "#ffffff" }}>
         <div style={{ maxWidth: 1160, margin: "0 auto", padding: "72px 24px" }}>
           <h2 style={{ textAlign: "center", margin: 0, fontSize: 32 }}>Notre collaboration</h2>
           <p style={{ marginTop: 16, color: "#5c6b79", lineHeight: 1.7 }}>
-            Nous sommes très attachés à la qualité des prestations que nous proposons. Nous vous accompagnons en cinq
-            temps, en débutant par une analyse fine et méthodique de vos objectifs.
+            Nous vous proposons une collaboration en cinq temps visant à protéger votre projet.
           </p>
-
-          <div style={{ marginTop: 32, display: "grid", gap: 18, gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))" }}>
-            {collaborationSteps.map((step) => (
+          <div
+            style={{
+              marginTop: 32,
+              display: "grid",
+              gap: 18,
+              gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
+            }}
+          >
+            {processCards.map((card) => (
               <div
-                key={step.title}
+                key={card.title}
                 style={{
                   backgroundColor: "#8fa6b1",
                   borderRadius: 16,
@@ -176,9 +248,20 @@ export default function ServicesPage() {
                 }}
                 className="card-hover"
               >
-                <div style={{ width: 36, height: 36, borderRadius: 10, backgroundColor: "rgba(255,255,255,0.2)", display: "grid", placeItems: "center" }}>★</div>
-                <h3 style={{ margin: 0, fontSize: 18 }}>{step.title}</h3>
-                <p style={{ margin: 0, fontSize: 13, lineHeight: 1.6 }}>{step.text}</p>
+                <div
+                  style={{
+                    width: 36,
+                    height: 36,
+                    borderRadius: 10,
+                    backgroundColor: "rgba(255,255,255,0.2)",
+                    display: "grid",
+                    placeItems: "center",
+                  }}
+                >
+                  ★
+                </div>
+                <h3 style={{ margin: 0, fontSize: 18 }}>{card.title}</h3>
+                <p style={{ margin: 0, fontSize: 13, lineHeight: 1.6 }}>{card.text}</p>
               </div>
             ))}
           </div>
@@ -205,6 +288,38 @@ export default function ServicesPage() {
                 <img src={stat.image} alt="" style={{ width: "100%", maxWidth: 160, margin: "0 auto" }} />
                 <div style={{ fontSize: 36, color: "#ff7a59", fontWeight: 700 }}>{stat.value}</div>
                 <div style={{ color: "#5c6b79" }}>{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section style={{ backgroundColor: "#ffffff" }}>
+        <div style={{ maxWidth: 1160, margin: "0 auto", padding: "72px 24px" }}>
+          <h2 style={{ textAlign: "center", margin: 0, fontSize: 32 }}>Ils nous font confiance</h2>
+          <div
+            style={{
+              marginTop: 28,
+              display: "grid",
+              gap: 16,
+              gridTemplateColumns: "repeat(auto-fit, minmax(120px, 1fr))",
+              alignItems: "center",
+            }}
+          >
+            {trustLogos.map((logo) => (
+              <div
+                key={logo}
+                style={{
+                  backgroundColor: "#f8f6f2",
+                  borderRadius: 12,
+                  padding: "16px",
+                  textAlign: "center",
+                  fontWeight: 700,
+                  color: "#2d3640",
+                }}
+                className="card-hover"
+              >
+                {logo}
               </div>
             ))}
           </div>
