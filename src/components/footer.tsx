@@ -26,12 +26,12 @@ export default function Footer() {
         <div>
           <div style={{ fontWeight: 700, marginBottom: 12 }}>Liens utiles</div>
           <div style={{ display: "grid", gap: 8, fontSize: 13 }}>
+            <a href="/">Accueil</a>
             <a href="/services">Services</a>
             <a href="/methodes">Méthode</a>
             <a href="/realisations">Réalisations</a>
             <a href="/a-propos">À propos</a>
             <a href="/contact">Contact</a>
-            <a href="/mentions-legales">Mentions légales</a>
           </div>
         </div>
         <div>

@@ -12,9 +12,9 @@ export default function Navbar() {
     <header style={{ width: "100%", backgroundColor: "#f58220" }}>
       <nav
         style={{
-          maxWidth: 1200,
+          maxWidth: 1160,
           margin: "0 auto",
-          padding: "18px 24px",
+          padding: "16px 24px",
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
