@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const serviceSections = [
   {
     title: "Développement Web",
@@ -137,7 +139,14 @@ export default function ServicesPage() {
             </a>
           </div>
           <div style={{ display: "flex", justifyContent: "center" }}>
-            <img src="/illustrations/services-hero.svg" alt="" style={{ width: "100%", maxWidth: 420 }} />
+            <Image
+              src="/illustrations/services-hero.svg"
+              alt=""
+              width={480}
+              height={320}
+              style={{ width: "100%", height: "auto", maxWidth: 420 }}
+              priority
+            />
           </div>
         </div>
       </section>
@@ -172,7 +181,7 @@ export default function ServicesPage() {
                   }}
                   className="card-hover"
                 >
-                  <img src={card.icon} alt="" style={{ width: 64, height: 64, margin: "0 auto" }} />
+                  <Image src={card.icon} alt="" width={64} height={64} style={{ margin: "0 auto" }} />
                   <h3 style={{ margin: 0, fontSize: 18, color: "#2d3640" }}>{card.title}</h3>
                   <p style={{ margin: 0, color: "#5c6b79", lineHeight: 1.6, fontSize: 14 }}>{card.text}</p>
                 </div>
@@ -212,7 +221,13 @@ export default function ServicesPage() {
                 }}
                 className="card-hover"
               >
-                <img src={card.image} alt="" style={{ width: "100%", maxWidth: 220, margin: "0 auto" }} />
+                <Image
+                  src={card.image}
+                  alt=""
+                  width={220}
+                  height={160}
+                  style={{ width: "100%", height: "auto", maxWidth: 220, margin: "0 auto" }}
+                />
                 <h3 style={{ margin: 0, fontSize: 20 }}>{card.title}</h3>
                 <p style={{ margin: 0, color: "#5c6b79", lineHeight: 1.6 }}>{card.text}</p>
               </div>
@@ -285,7 +300,13 @@ export default function ServicesPage() {
                 }}
                 className="card-hover"
               >
-                <img src={stat.image} alt="" style={{ width: "100%", maxWidth: 160, margin: "0 auto" }} />
+                <Image
+                  src={stat.image}
+                  alt=""
+                  width={160}
+                  height={120}
+                  style={{ width: "100%", height: "auto", maxWidth: 160, margin: "0 auto" }}
+                />
                 <div style={{ fontSize: 36, color: "#ff7a59", fontWeight: 700 }}>{stat.value}</div>
                 <div style={{ color: "#5c6b79" }}>{stat.label}</div>
               </div>

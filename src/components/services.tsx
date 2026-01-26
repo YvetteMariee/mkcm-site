@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const workItems = [
   {
     title: "Plateforme de ressources",
@@ -184,10 +186,12 @@ export default function Services() {
                 }}
                 className="card-hover"
               >
-                <img
+                <Image
                   src={card.image}
                   alt=""
-                  style={{ width: "100%", maxWidth: 220, margin: "0 auto" }}
+                  width={220}
+                  height={160}
+                  style={{ width: "100%", height: "auto", maxWidth: 220, margin: "0 auto" }}
                 />
                 <h3 style={{ margin: 0, fontSize: 20 }}>{card.title}</h3>
                 <p style={{ margin: 0, color: "#5c6b79", lineHeight: 1.6 }}>{card.desc}</p>
