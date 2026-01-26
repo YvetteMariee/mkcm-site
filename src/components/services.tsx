@@ -35,6 +35,21 @@ const expertiseItems = [
   },
 ];
 
+const aboutCards = [
+  {
+    title: "Notre mission",
+    desc:
+      "Accompagner vos projets digitaux avec une vision claire, une exécution soignée et des résultats mesurables.",
+    image: "/illustrations/mission.svg",
+  },
+  {
+    title: "Nos objectifs",
+    desc:
+      "Apporter des solutions fiables et évolutives, adaptées à vos enjeux de communication et de croissance.",
+    image: "/illustrations/objectives.svg",
+  },
+];
+
 export default function Services() {
   return (
     <section style={{ backgroundColor: "#ffffff" }}>
@@ -125,6 +140,7 @@ export default function Services() {
                   display: "grid",
                   gap: 12,
                 }}
+                className="card-hover"
               >
                 <span style={{ fontSize: 12, color: "#ff7a59", textTransform: "uppercase", letterSpacing: "0.2em" }}>
                   {item.tag}
@@ -132,6 +148,49 @@ export default function Services() {
                 <h3 style={{ margin: 0, fontSize: 20 }}>{item.title}</h3>
                 <p style={{ margin: 0, color: "#5c6b79", lineHeight: 1.5 }}>{item.desc}</p>
                 <span style={{ fontSize: 13, color: "#101418" }}>Étude synthétique →</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div id="about" style={{ backgroundColor: "#ffffff" }}>
+        <div style={{ maxWidth: 1160, margin: "0 auto", padding: "96px 24px" }}>
+          <div style={{ textAlign: "center" }}>
+            <p style={{ textTransform: "uppercase", letterSpacing: "0.22em", fontSize: 12, color: "#5c6b79" }}>
+              En savoir plus sur nous
+            </p>
+            <h2 style={{ fontSize: 38, margin: "16px 0" }}>Un accompagnement fiable et humain.</h2>
+          </div>
+          <div
+            style={{
+              marginTop: 32,
+              display: "grid",
+              gap: 24,
+              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+            }}
+          >
+            {aboutCards.map((card) => (
+              <div
+                key={card.title}
+                style={{
+                  backgroundColor: "#f8f6f2",
+                  borderRadius: 24,
+                  padding: 28,
+                  border: "1px solid rgba(16, 20, 24, 0.08)",
+                  display: "grid",
+                  gap: 16,
+                  textAlign: "center",
+                }}
+                className="card-hover"
+              >
+                <img
+                  src={card.image}
+                  alt=""
+                  style={{ width: "100%", maxWidth: 220, margin: "0 auto" }}
+                />
+                <h3 style={{ margin: 0, fontSize: 20 }}>{card.title}</h3>
+                <p style={{ margin: 0, color: "#5c6b79", lineHeight: 1.6 }}>{card.desc}</p>
               </div>
             ))}
           </div>
@@ -163,6 +222,7 @@ export default function Services() {
                   padding: 24,
                   border: "1px solid rgba(16, 20, 24, 0.06)",
                 }}
+                className="card-hover"
               >
                 <h3 style={{ margin: "0 0 12px", fontSize: 18 }}>{item.title}</h3>
                 <p style={{ margin: 0, color: "#5c6b79", lineHeight: 1.6 }}>{item.desc}</p>

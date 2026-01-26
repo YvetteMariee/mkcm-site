@@ -1,3 +1,16 @@
+const trustLogos = [
+  "CADViewer",
+  "Trovavia",
+  "Wizup",
+  "Origame",
+  "Discover",
+  "MyNO7",
+  "Digital Success",
+  "Cooltchop",
+  "PKF",
+  "Privethique",
+];
+
 export default function Contact() {
   return (
     <section id="contact" style={{ backgroundColor: "#ffffff" }}>
@@ -60,6 +73,38 @@ export default function Contact() {
               Envoyer la demande
             </button>
           </form>
+        </div>
+
+        <div style={{ marginTop: 56 }}>
+          <h2 style={{ textAlign: "center", margin: 0, fontSize: 32 }}>
+            Ils nous font confiance
+          </h2>
+          <div
+            style={{
+              marginTop: 28,
+              display: "grid",
+              gap: 16,
+              gridTemplateColumns: "repeat(auto-fit, minmax(120px, 1fr))",
+              alignItems: "center",
+            }}
+          >
+            {trustLogos.map((logo) => (
+              <div
+                key={logo}
+                style={{
+                  backgroundColor: "#f8f6f2",
+                  borderRadius: 12,
+                  padding: "16px",
+                  textAlign: "center",
+                  fontWeight: 700,
+                  color: "#2d3640",
+                }}
+                className="card-hover"
+              >
+                {logo}
+              </div>
+            ))}
+          </div>
         </div>
 
         <footer
