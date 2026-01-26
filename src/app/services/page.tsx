@@ -6,17 +6,17 @@ const serviceSections = [
     cards: [
       {
         title: "Développement d'applications web",
-        text: "Création d’application web SPA et PWA pour offrir la meilleure expérience utilisateur.",
+        text: "Problème : outils lents. Solution : app web rapide. Résultat : efficacité accrue.",
         icon: "/illustrations/service-web.svg",
       },
       {
         title: "Développement de sites web et e-commerce",
-        text: "Création de site internet, blog et e-commerce basé sur les technologies web modernes.",
+        text: "Problème : ventes faibles. Solution : site optimisé. Résultat : conversions en hausse.",
         icon: "/illustrations/service-ecommerce.svg",
       },
       {
         title: "Développement d'applications mobile",
-        text: "Applications mobiles natives & hybrides pour fidéliser vos clients.",
+        text: "Problème : clients dispersés. Solution : app mobile. Résultat : engagement renforcé.",
         icon: "/illustrations/service-mobile.svg",
       },
     ],
@@ -28,17 +28,17 @@ const serviceSections = [
     cards: [
       {
         title: "Design graphique",
-        text: "Création de logos, affiches, brochures, cartes de visite et supports print.",
+        text: "Problème : image floue. Solution : identité claire. Résultat : marque crédible.",
         icon: "/illustrations/service-graphic.svg",
       },
       {
         title: "Design UI (Interface Utilisateur)",
-        text: "Conception d’interfaces logicielles ou web claires et agréables à utiliser.",
+        text: "Problème : navigation confuse. Solution : UI structurée. Résultat : usage fluide.",
         icon: "/illustrations/service-ui.svg",
       },
       {
         title: "Design UX (Expérience Utilisateur)",
-        text: "Conception d’expériences centrées sur l’utilisateur et ses besoins.",
+        text: "Problème : abandon utilisateur. Solution : parcours optimisé. Résultat : rétention.",
         icon: "/illustrations/service-ux.svg",
       },
     ],
@@ -56,13 +56,13 @@ const aboutCards = [
   {
     title: "Notre mission",
     text:
-      "Accompagner vos projets digitaux avec une vision claire, une exécution soignée et des résultats mesurables.",
+      "Clarifier vos objectifs, cadrer un plan actionnable et livrer des solutions utiles à votre business.",
     image: "/illustrations/mission.svg",
   },
   {
     title: "Nos objectifs",
     text:
-      "Apporter des solutions fiables et évolutives, adaptées à vos enjeux de communication et de croissance.",
+      "Créer de la valeur mesurable : plus de demandes, plus de confiance, plus de conversions.",
     image: "/illustrations/objectives.svg",
   },
 ];
@@ -225,7 +225,7 @@ export default function ServicesPage() {
         <div style={{ maxWidth: 1160, margin: "0 auto", padding: "72px 24px" }}>
           <h2 style={{ textAlign: "center", margin: 0, fontSize: 32 }}>Notre collaboration</h2>
           <p style={{ marginTop: 16, color: "#5c6b79", lineHeight: 1.7 }}>
-            Nous vous proposons une collaboration en cinq temps visant à protéger votre projet.
+            Une méthode simple, rassurante et professionnelle pour sécuriser votre projet.
           </p>
           <div
             style={{

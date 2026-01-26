@@ -58,14 +58,14 @@ export default function Hero() {
         >
           <div>
             <p style={{ textTransform: "uppercase", letterSpacing: "0.22em", fontSize: 12, color: "#5c6b79" }}>
-              Studio digital indépendant
+              Conseil digital & produits web
             </p>
             <h1 style={{ fontSize: 52, margin: "16px 0", lineHeight: 1.05 }}>
-              Conception de marques et d’expériences web sobres et efficaces.
+              MKCM accompagne les PME et équipes ambitieuses vers des sites clairs, rapides et rentables.
             </h1>
             <p style={{ fontSize: 18, color: "#5c6b79", maxWidth: 520, lineHeight: 1.6 }}>
-              Nous aidons les équipes à clarifier leur message, à structurer leurs contenus
-              et à livrer des interfaces rapides avec un design discret.
+              Nous clarifions vos objectifs, concevons la solution adaptée et livrons un site
+              qui inspire confiance et génère des résultats concrets.
             </p>
             <div style={{ marginTop: 28, display: "flex", gap: 14, flexWrap: "wrap" }}>
               <a

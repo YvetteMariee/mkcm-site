@@ -39,13 +39,13 @@ const aboutCards = [
   {
     title: "Notre mission",
     desc:
-      "Accompagner vos projets digitaux avec une vision claire, une exécution soignée et des résultats mesurables.",
+      "Clarifier vos objectifs, cadrer un plan actionnable et livrer des solutions digitales utiles à votre business.",
     image: "/illustrations/mission.svg",
   },
   {
     title: "Nos objectifs",
     desc:
-      "Apporter des solutions fiables et évolutives, adaptées à vos enjeux de communication et de croissance.",
+      "Créer de la valeur mesurable : plus de demandes, plus de confiance, plus de conversions.",
     image: "/illustrations/objectives.svg",
   },
 ];

@@ -1,18 +1,18 @@
 const steps = [
   {
     number: "01",
-    title: "Alignement",
-    text: "Atelier court pour cadrer objectifs, contraintes et indicateurs de succès.",
+    title: "Cadrer",
+    text: "Nous clarifions votre besoin, vos priorités et les résultats attendus.",
   },
   {
     number: "02",
-    title: "Production",
-    text: "Design modulaire, itérations rapides et validations continues.",
+    title: "Concevoir",
+    text: "Nous proposons une solution claire, avec un design sobre et efficace.",
   },
   {
     number: "03",
-    title: "Livraison",
-    text: "Fichiers propres, documentation et accompagnement de mise en ligne.",
+    title: "Livrer",
+    text: "Nous déployons rapidement, avec un suivi et des recommandations actionnables.",
   },
 ];
 
