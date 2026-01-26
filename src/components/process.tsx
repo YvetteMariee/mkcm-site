@@ -23,6 +23,29 @@ const stats = [
   { label: "Formats", value: "Web · Brand" },
 ];
 
+const processCards = [
+  {
+    title: "Découvrir",
+    text: "Nous explorons votre vision et comprenons les besoins clés de votre entreprise.",
+  },
+  {
+    title: "Conseiller",
+    text: "Nous proposons une stratégie alignée sur vos objectifs et vos ressources.",
+  },
+  {
+    title: "Développer",
+    text: "Nous mettons en œuvre la solution avec un objectif clair pour toutes les parties prenantes.",
+  },
+  {
+    title: "Analyser",
+    text: "Nous suivons les KPI pour optimiser les performances après la mise en œuvre.",
+  },
+  {
+    title: "Optimiser",
+    text: "Nous ajustons la stratégie pour faire progresser votre vision.",
+  },
+];
+
 export default function Process() {
   return (
     <section id="approach" style={{ padding: "96px 24px", backgroundColor: "#f8f6f2" }}>
@@ -79,6 +102,48 @@ export default function Process() {
             <div key={stat.label}>
               <div style={{ fontSize: 22, fontWeight: 700 }}>{stat.value}</div>
               <div style={{ fontSize: 13, color: "rgba(255,255,255,0.65)" }}>{stat.label}</div>
+            </div>
+          ))}
+        </div>
+
+        <div
+          style={{
+            marginTop: 48,
+            display: "grid",
+            gap: 18,
+            gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
+          }}
+        >
+          {processCards.map((card) => (
+            <div
+              key={card.title}
+              style={{
+                backgroundColor: "#ffffff",
+                borderRadius: 18,
+                padding: 20,
+                border: "1px solid rgba(16, 20, 24, 0.08)",
+                display: "grid",
+                gap: 10,
+              }}
+              className="card-hover"
+            >
+              <div
+                style={{
+                  width: 32,
+                  height: 32,
+                  borderRadius: 10,
+                  backgroundColor: "#ff7a59",
+                  color: "#ffffff",
+                  display: "grid",
+                  placeItems: "center",
+                  fontWeight: 700,
+                  fontSize: 12,
+                }}
+              >
+                ✓
+              </div>
+              <div style={{ fontWeight: 700 }}>{card.title}</div>
+              <p style={{ margin: 0, color: "#5c6b79", fontSize: 13, lineHeight: 1.6 }}>{card.text}</p>
             </div>
           ))}
         </div>
