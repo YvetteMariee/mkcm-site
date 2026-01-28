@@ -9,12 +9,12 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <header style={{ width: "100%", backgroundColor: "#f59e0b" }}>
+    <header style={{ width: "100%", backgroundColor: "#f58220" }}>
       <nav
         style={{
-          maxWidth: 1200,
+          maxWidth: 1160,
           margin: "0 auto",
-          padding: "18px 24px",
+          padding: "16px 24px",
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
@@ -36,7 +36,7 @@ export default function Navbar() {
 
 
         {/* Menu */}
-        <div style={{ display: "flex", gap: 32 }}>
+        <div style={{ display: "flex", gap: 24, flexWrap: "wrap" }}>
           <NavItem label="Accueil" href="/" active={pathname === "/"} />
           <NavItem
             label="Services"
@@ -48,8 +48,16 @@ export default function Navbar() {
             href="/methodes"
             active={pathname === "/methodes"}
           />
-
-          
+          <NavItem
+            label="Réalisations"
+            href="/realisations"
+            active={pathname === "/realisations"}
+          />
+          <NavItem
+            label="À propos"
+            href="/a-propos"
+            active={pathname === "/a-propos"}
+          />
           <NavItem
             label="Contact"
             href="/contact"

@@ -34,12 +34,12 @@ export default function Contact() {
               Planifions un format court pour cadrer votre prochaine étape.
             </h2>
             <p style={{ color: "rgba(255,255,255,0.7)", lineHeight: 1.6 }}>
-              Réponse sous 48h ouvrées, brief structuré et recommandations actionnables.
+              Un premier échange court pour comprendre vos enjeux, clarifier vos besoins et définir les prochaines étapes.
             </p>
             <div style={{ marginTop: 24, display: "grid", gap: 12, fontSize: 14 }}>
-              <div>hello@studio-nord.fr</div>
-              <div>+33 1 84 00 00 00</div>
-              <div>Disponible à distance ou sur site (Europe).</div>
+              <div>mkcm.consulting@gmail.fr</div>
+              <div>+237 6 93 23 24 30 01</div>
+              <div>Disponible à distance ou sur site .</div>
             </div>
           </div>
 
@@ -59,7 +59,7 @@ export default function Contact() {
             </div>
             <div style={{ display: "grid", gap: 8 }}>
               <label style={{ fontSize: 12, color: "#5c6b79" }}>Email</label>
-              <input type="email" placeholder="vous@email.com" style={inputStyle} />
+              <input type="email" placeholder="votre@email.com" style={inputStyle} />
             </div>
             <div style={{ display: "grid", gap: 8 }}>
               <label style={{ fontSize: 12, color: "#5c6b79" }}>Sujet</label>

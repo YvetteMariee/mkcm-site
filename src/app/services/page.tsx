@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const serviceSections = [
   {
     title: "Développement Web",
@@ -6,17 +8,17 @@ const serviceSections = [
     cards: [
       {
         title: "Développement d'applications web",
-        text: "Création d’application web SPA et PWA pour offrir la meilleure expérience utilisateur.",
+        text: "Problème : outils lents. Solution : app web rapide. Résultat : efficacité accrue.",
         icon: "/illustrations/service-web.svg",
       },
       {
         title: "Développement de sites web et e-commerce",
-        text: "Création de site internet, blog et e-commerce basé sur les technologies web modernes.",
+        text: "Problème : ventes faibles. Solution : site optimisé. Résultat : conversions en hausse.",
         icon: "/illustrations/service-ecommerce.svg",
       },
       {
         title: "Développement d'applications mobile",
-        text: "Applications mobiles natives & hybrides pour fidéliser vos clients.",
+        text: "Problème : clients dispersés. Solution : app mobile. Résultat : engagement renforcé.",
         icon: "/illustrations/service-mobile.svg",
       },
     ],
@@ -28,43 +30,20 @@ const serviceSections = [
     cards: [
       {
         title: "Design graphique",
-        text: "Création de logos, affiches, brochures, cartes de visite et supports print.",
+        text: "Problème : image floue. Solution : identité claire. Résultat : marque crédible.",
         icon: "/illustrations/service-graphic.svg",
       },
       {
         title: "Design UI (Interface Utilisateur)",
-        text: "Conception d’interfaces logicielles ou web claires et agréables à utiliser.",
+        text: "Problème : navigation confuse. Solution : UI structurée. Résultat : usage fluide.",
         icon: "/illustrations/service-ui.svg",
       },
       {
         title: "Design UX (Expérience Utilisateur)",
-        text: "Conception d’expériences centrées sur l’utilisateur et ses besoins.",
+        text: "Problème : abandon utilisateur. Solution : parcours optimisé. Résultat : rétention.",
         icon: "/illustrations/service-ux.svg",
       },
     ],
-  },
-];
-
-const collaborationSteps = [
-  {
-    title: "Découvrir",
-    text: "Nous explorons votre vision, réfléchissons à vos idées et apprenons les besoins de votre entreprise.",
-  },
-  {
-    title: "Conseiller",
-    text: "Nous proposons des solutions qui alignent vos objectifs avec les besoins de vos clients.",
-  },
-  {
-    title: "Développer",
-    text: "Nous mettons en œuvre votre solution avec un objectif clairement défini.",
-  },
-  {
-    title: "Analyser",
-    text: "Nous suivons et testons vos KPI pour analyser les performances après mise en œuvre.",
-  },
-  {
-    title: "Optimiser",
-    text: "Nous ajustons votre stratégie pour faire progresser votre vision.",
   },
 ];
 
@@ -75,6 +54,57 @@ const stats = [
   { value: "+15", label: "Applications mobiles réalisées", image: "/illustrations/stat-mobile.svg" },
 ];
 
+const aboutCards = [
+  {
+    title: "Notre mission",
+    text:
+      "Clarifier vos objectifs, cadrer un plan actionnable et livrer des solutions utiles à votre business.",
+    image: "/illustrations/mission.svg",
+  },
+  {
+    title: "Nos objectifs",
+    text:
+      "Créer de la valeur mesurable : plus de demandes, plus de confiance, plus de conversions.",
+    image: "/illustrations/objectives.svg",
+  },
+];
+
+const processCards = [
+  {
+    title: "Découvrir",
+    text: "Nous explorons votre vision, réfléchissons à vos idées et apprenons vos besoins.",
+  },
+  {
+    title: "Conseiller",
+    text: "Nous proposons des solutions qui alignent vos objectifs avec vos ressources.",
+  },
+  {
+    title: "Développer",
+    text: "Nous mettons en œuvre votre solution avec un objectif clairement défini.",
+  },
+  {
+    title: "Analyser",
+    text: "Nous suivons et testons vos KPI pour analyser les performances.",
+  },
+  {
+    title: "Optimiser",
+    text: "Nous ajustons votre stratégie pour faire progresser votre vision.",
+  },
+];
+
+const trustLogos = [
+  "CADViewer",
+  "Trovavia",
+  "Wizup",
+  "Origame",
+  "Discover",
+  "MyNO7",
+  "Digital Success",
+  "Cooltchop",
+  "PKF",
+  "Privethique",
+];
+
 export const metadata = {
   title: "Nos services – MKCM Consult",
   description: "Découvrez les services numériques et sécurisés proposés par MKCM Consult.",
@@ -83,7 +113,7 @@ export const metadata = {
 export default function ServicesPage() {
   return (
     <main>
-      <section style={{ backgroundColor: "#ffffff" }}>
+      <section id="collaboration" style={{ backgroundColor: "#ffffff" }}>
         <div style={{ maxWidth: 1160, margin: "0 auto", padding: "96px 24px", display: "grid", gap: 48, gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", alignItems: "center" }}>
           <div>
             <h1 style={{ fontSize: 44, margin: 0, lineHeight: 1.1, color: "#101418" }}>
@@ -109,7 +139,14 @@ export default function ServicesPage() {
             </a>
           </div>
           <div style={{ display: "flex", justifyContent: "center" }}>
-            <img src="/illustrations/services-hero.svg" alt="" style={{ width: "100%", maxWidth: 420 }} />
+            <Image
+              src="/illustrations/services-hero.svg"
+              alt=""
+              width={480}
+              height={320}
+              style={{ width: "100%", height: "auto", maxWidth: 420 }}
+              priority
+            />
           </div>
         </div>
       </section>
@@ -144,7 +181,7 @@ export default function ServicesPage() {
                   }}
                   className="card-hover"
                 >
-                  <img src={card.icon} alt="" style={{ width: 64, height: 64, margin: "0 auto" }} />
+                  <Image src={card.icon} alt="" width={64} height={64} style={{ margin: "0 auto" }} />
                   <h3 style={{ margin: 0, fontSize: 18, color: "#2d3640" }}>{card.title}</h3>
                   <p style={{ margin: 0, color: "#5c6b79", lineHeight: 1.6, fontSize: 14 }}>{card.text}</p>
                 </div>
@@ -154,18 +191,68 @@ export default function ServicesPage() {
         </section>
       ))}
 
-      <section id="collaboration" style={{ backgroundColor: "#ffffff" }}>
+      <section style={{ backgroundColor: "#ffffff" }}>
+        <div style={{ maxWidth: 1160, margin: "0 auto", padding: "72px 24px" }}>
+          <div style={{ textAlign: "center" }}>
+            <p style={{ textTransform: "uppercase", letterSpacing: "0.22em", fontSize: 12, color: "#5c6b79" }}>
+              En savoir plus sur nous
+            </p>
+            <h2 style={{ fontSize: 32, margin: "16px 0" }}>Un accompagnement fiable et humain.</h2>
+          </div>
+          <div
+            style={{
+              marginTop: 32,
+              display: "grid",
+              gap: 24,
+              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+            }}
+          >
+            {aboutCards.map((card) => (
+              <div
+                key={card.title}
+                style={{
+                  backgroundColor: "#f8f6f2",
+                  borderRadius: 24,
+                  padding: 28,
+                  border: "1px solid rgba(16, 20, 24, 0.08)",
+                  display: "grid",
+                  gap: 16,
+                  textAlign: "center",
+                }}
+                className="card-hover"
+              >
+                <Image
+                  src={card.image}
+                  alt=""
+                  width={220}
+                  height={160}
+                  style={{ width: "100%", height: "auto", maxWidth: 220, margin: "0 auto" }}
+                />
+                <h3 style={{ margin: 0, fontSize: 20 }}>{card.title}</h3>
+                <p style={{ margin: 0, color: "#5c6b79", lineHeight: 1.6 }}>{card.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section style={{ backgroundColor: "#ffffff" }}>
         <div style={{ maxWidth: 1160, margin: "0 auto", padding: "72px 24px" }}>
           <h2 style={{ textAlign: "center", margin: 0, fontSize: 32 }}>Notre collaboration</h2>
           <p style={{ marginTop: 16, color: "#5c6b79", lineHeight: 1.7 }}>
-            Nous sommes très attachés à la qualité des prestations que nous proposons. Nous vous accompagnons en cinq
-            temps, en débutant par une analyse fine et méthodique de vos objectifs.
+            Une méthode simple, rassurante et professionnelle pour sécuriser votre projet.
           </p>
-
-          <div style={{ marginTop: 32, display: "grid", gap: 18, gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))" }}>
-            {collaborationSteps.map((step) => (
+          <div
+            style={{
+              marginTop: 32,
+              display: "grid",
+              gap: 18,
+              gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
+            }}
+          >
+            {processCards.map((card) => (
               <div
-                key={step.title}
+                key={card.title}
                 style={{
                   backgroundColor: "#8fa6b1",
                   borderRadius: 16,
@@ -176,9 +263,20 @@ export default function ServicesPage() {
                 }}
                 className="card-hover"
               >
-                <div style={{ width: 36, height: 36, borderRadius: 10, backgroundColor: "rgba(255,255,255,0.2)", display: "grid", placeItems: "center" }}>★</div>
-                <h3 style={{ margin: 0, fontSize: 18 }}>{step.title}</h3>
-                <p style={{ margin: 0, fontSize: 13, lineHeight: 1.6 }}>{step.text}</p>
+                <div
+                  style={{
+                    width: 36,
+                    height: 36,
+                    borderRadius: 10,
+                    backgroundColor: "rgba(255,255,255,0.2)",
+                    display: "grid",
+                    placeItems: "center",
+                  }}
+                >
+                  ★
+                </div>
+                <h3 style={{ margin: 0, fontSize: 18 }}>{card.title}</h3>
+                <p style={{ margin: 0, fontSize: 13, lineHeight: 1.6 }}>{card.text}</p>
               </div>
             ))}
           </div>
@@ -202,7 +300,13 @@ export default function ServicesPage() {
                 }}
                 className="card-hover"
               >
-                <img src={stat.image} alt="" style={{ width: "100%", maxWidth: 160, margin: "0 auto" }} />
+                <Image
+                  src={stat.image}
+                  alt=""
+                  width={160}
+                  height={120}
+                  style={{ width: "100%", height: "auto", maxWidth: 160, margin: "0 auto" }}
+                />
                 <div style={{ fontSize: 36, color: "#ff7a59", fontWeight: 700 }}>{stat.value}</div>
                 <div style={{ color: "#5c6b79" }}>{stat.label}</div>
               </div>
@@ -211,46 +315,38 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <footer style={{ backgroundColor: "#0b141a", color: "#d6dde3" }} id="contact">
-        <div style={{ maxWidth: 1160, margin: "0 auto", padding: "64px 24px", display: "grid", gap: 32, gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))" }}>
-          <div>
-            <div style={{ fontWeight: 800, color: "#ffffff", fontSize: 20 }}>MKCM</div>
-            <p style={{ marginTop: 12, lineHeight: 1.6, fontSize: 13 }}>
-              Nous offrons des services de haute qualité en utilisant des technologies modernes pour accélérer votre croissance.
-            </p>
-          </div>
-          <div>
-            <div style={{ fontWeight: 700, marginBottom: 12 }}>Liens utiles</div>
-            <div style={{ display: "grid", gap: 8, fontSize: 13 }}>
-              <a href="#">Services</a>
-              <a href="#">Carrière</a>
-              <a href="#">Nous</a>
-              <a href="#">Mentions légales</a>
-            </div>
-          </div>
-          <div>
-            <div style={{ fontWeight: 700, marginBottom: 12 }}>Contact</div>
-            <div style={{ display: "grid", gap: 8, fontSize: 13 }}>
-              <div>support@mkcm-consulting.com</div>
-              <div>(+237) 6 52 71 04 32</div>
-              <div>Douala, Cameroun</div>
-            </div>
-          </div>
-          <div style={{ backgroundColor: "#ffffff", borderRadius: 12, overflow: "hidden" }}>
-            <iframe
-              title="map"
-              src="https://www.google.com/maps?q=Douala&output=embed"
-              width="100%"
-              height="200"
-              style={{ border: 0 }}
-              loading="lazy"
-            />
+      <section style={{ backgroundColor: "#ffffff" }}>
+        <div style={{ maxWidth: 1160, margin: "0 auto", padding: "72px 24px" }}>
+          <h2 style={{ textAlign: "center", margin: 0, fontSize: 32 }}>Ils nous font confiance</h2>
+          <div
+            style={{
+              marginTop: 28,
+              display: "grid",
+              gap: 16,
+              gridTemplateColumns: "repeat(auto-fit, minmax(120px, 1fr))",
+              alignItems: "center",
+            }}
+          >
+            {trustLogos.map((logo) => (
+              <div
+                key={logo}
+                style={{
+                  backgroundColor: "#f8f6f2",
+                  borderRadius: 12,
+                  padding: "16px",
+                  textAlign: "center",
+                  fontWeight: 700,
+                  color: "#2d3640",
+                }}
+                className="card-hover"
+              >
+                {logo}
+              </div>
+            ))}
           </div>
         </div>
-        <div style={{ textAlign: "center", padding: "16px 24px", fontSize: 12, color: "#94a3b8" }}>
-          Copyright © 2026 MKCM. Tous droits réservés.
-        </div>
-      </footer>
+      </section>
+
     </main>
   );
 }
