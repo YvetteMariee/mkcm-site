@@ -136,7 +136,7 @@ export default function Hero() {
                 { label: "Durée", value: "6 semaines" },
                 { label: "Livrables", value: "Brand kit + UI" },
                 { label: "Équipe", value: "2 designers" },
-                { label: "Zone", value: "Europe" },
+                { label: "Zone", value: "Afrique" },
               ].map((item) => (
                 <div key={item.label} style={{ padding: 14, borderRadius: 16, background: "#f8f6f2" }}>
                   <div style={{ fontSize: 12, color: "#5c6b79" }}>{item.label}</div>
