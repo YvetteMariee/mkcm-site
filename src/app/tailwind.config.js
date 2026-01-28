@@ -7,21 +7,17 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        mkcm: {
-          50: "#eef6ff",
-          100: "#dbeafe",
-          200: "#bfdbfe",
-          300: "#93c5fd",
-          400: "#60a5fa",
+        brand: {
+          50: "#eff5ff",
+          100: "#e0ebff",
+          200: "#c1d8ff",
+          300: "#9bbefe",
+          400: "#6b9cfd",
           500: "#3b82f6",
           600: "#2563eb",
           700: "#1d4ed8",
           800: "#1e40af",
-          900: "#1e3a8a",
-        },
-        accent: {
-          500: "#f59e0b",
-          600: "#d97706",
+          900: "#0f1b3d",
         },
       },
     },
