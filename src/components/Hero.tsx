@@ -59,9 +59,6 @@ export default function Hero() {
           }}
         >
           <div>
-            <p style={{ textTransform: "uppercase", letterSpacing: "0.22em", fontSize: 12, color: "#5c6b79" }}>
-              Des solutions digitales claires, rapides et orientées résultats.
-            </p>
             <h1 style={{ fontSize: 52, margin: "16px 0", lineHeight: 1.05 }}>
            BOOSTER VOTRE ENTREPRISE
             </h1>
@@ -136,7 +133,7 @@ export default function Hero() {
                 { label: "Durée", value: "6 semaines" },
                 { label: "Livrables", value: "Brand kit + UI" },
                 { label: "Équipe", value: "2 designers" },
-                { label: "Zone", value: "Europe" },
+                { label: "Zone", value: "Afrique" },
               ].map((item) => (
                 <div key={item.label} style={{ padding: 14, borderRadius: 16, background: "#f8f6f2" }}>
                   <div style={{ fontSize: 12, color: "#5c6b79" }}>{item.label}</div>
