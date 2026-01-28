@@ -29,7 +29,7 @@ export default function Hero() {
             flexWrap: "wrap",
           }}
         >
-          <div style={{ fontWeight: 700, letterSpacing: "0.08em" }}>STUDIO NORD</div>
+          <div style={{ fontWeight: 700, letterSpacing: "0.08em" }}>MKCM CONSULTING</div>
           <nav style={{ display: "flex", gap: 20, flexWrap: "wrap", fontSize: 14 }}>
             {navItems.map((item) => (
               <a key={item.label} href={item.href} style={{ color: "#5c6b79" }}>
