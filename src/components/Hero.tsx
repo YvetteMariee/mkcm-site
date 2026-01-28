@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const navItems = [
   { label: "Studio", href: "#studio" },
   { label: "Travaux", href: "#work" },
@@ -58,14 +60,14 @@ export default function Hero() {
         >
           <div>
             <p style={{ textTransform: "uppercase", letterSpacing: "0.22em", fontSize: 12, color: "#5c6b79" }}>
-              Studio digital indépendant
+              Conseil digital & produits web
             </p>
             <h1 style={{ fontSize: 52, margin: "16px 0", lineHeight: 1.05 }}>
-              Conception de marques et d’expériences web sobres et efficaces.
+              MKCM accompagne les PME et équipes ambitieuses vers des sites clairs, rapides et rentables.
             </h1>
             <p style={{ fontSize: 18, color: "#5c6b79", maxWidth: 520, lineHeight: 1.6 }}>
-              Nous aidons les équipes à clarifier leur message, à structurer leurs contenus
-              et à livrer des interfaces rapides avec un design discret.
+              Nous clarifions vos objectifs, concevons la solution adaptée et livrons un site
+              qui inspire confiance et génère des résultats concrets.
             </p>
             <div style={{ marginTop: 28, display: "flex", gap: 14, flexWrap: "wrap" }}>
               <a
@@ -106,10 +108,13 @@ export default function Hero() {
             }}
             className="card-hover"
           >
-            <img
+            <Image
               src="/illustrations/hero.svg"
               alt=""
-              style={{ width: "100%", borderRadius: 20 }}
+              width={360}
+              height={220}
+              style={{ width: "100%", height: "auto", borderRadius: 20 }}
+              priority
             />
             <div style={{ display: "grid", gap: 8 }}>
               <span style={{ fontSize: 12, textTransform: "uppercase", letterSpacing: "0.18em", color: "#5c6b79" }}>

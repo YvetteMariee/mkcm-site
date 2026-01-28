@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const workItems = [
   {
     title: "Plateforme de ressources",
@@ -39,13 +41,13 @@ const aboutCards = [
   {
     title: "Notre mission",
     desc:
-      "Accompagner vos projets digitaux avec une vision claire, une exécution soignée et des résultats mesurables.",
+      "Clarifier vos objectifs, cadrer un plan actionnable et livrer des solutions digitales utiles à votre business.",
     image: "/illustrations/mission.svg",
   },
   {
     title: "Nos objectifs",
     desc:
-      "Apporter des solutions fiables et évolutives, adaptées à vos enjeux de communication et de croissance.",
+      "Créer de la valeur mesurable : plus de demandes, plus de confiance, plus de conversions.",
     image: "/illustrations/objectives.svg",
   },
 ];
@@ -184,10 +186,12 @@ export default function Services() {
                 }}
                 className="card-hover"
               >
-                <img
+                <Image
                   src={card.image}
                   alt=""
-                  style={{ width: "100%", maxWidth: 220, margin: "0 auto" }}
+                  width={220}
+                  height={160}
+                  style={{ width: "100%", height: "auto", maxWidth: 220, margin: "0 auto" }}
                 />
                 <h3 style={{ margin: 0, fontSize: 20 }}>{card.title}</h3>
                 <p style={{ margin: 0, color: "#5c6b79", lineHeight: 1.6 }}>{card.desc}</p>
