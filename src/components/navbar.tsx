@@ -1,68 +1,43 @@
 "use client";
-import Image from "next/image";
-
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+
+const navItems = [
+  { label: "Accueil", href: "/" },
+  { label: "Services", href: "/services" },
+  { label: "Méthode", href: "/methodes" },
+  { label: "Réalisations", href: "/realisations" },
+  { label: "À propos", href: "/a-propos" },
+  { label: "Contact", href: "/contact" },
+];
 
 export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <header style={{ width: "100%", backgroundColor: "#f58220" }}>
-      <nav
-        style={{
-          maxWidth: 1160,
-          margin: "0 auto",
-          padding: "16px 24px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-        }}
-      >
-      
-      {/* Logo */}
-<Link href="/">
-  <Image
-    src="/logo-mkcm.svg"
-    alt="MKCM Consulting Services"
-    width={180}
-    height={50}
-    priority
-    
-  />
-</Link>
-
-
-
-        {/* Menu */}
-        <div style={{ display: "flex", gap: 24, flexWrap: "wrap" }}>
-          <NavItem label="Accueil" href="/" active={pathname === "/"} />
-          <NavItem
-            label="Services"
-            href="/services"
-            active={pathname === "/services"}
-          />
-          <NavItem
-            label="Méthode"
-            href="/methodes"
-            active={pathname === "/methodes"}
-          />
-          <NavItem
-            label="Réalisations"
-            href="/realisations"
-            active={pathname === "/realisations"}
-          />
-          <NavItem
-            label="À propos"
-            href="/a-propos"
-            active={pathname === "/a-propos"}
-          />
-          <NavItem
-            label="Contact"
-            href="/contact"
-            active={pathname === "/contact"}
-          />
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#0B1F33]/95 backdrop-blur">
+      <nav className="mx-auto flex w-full max-w-6xl items-center justify-between gap-8 px-6 py-4">
+        <Link href="/" aria-label="MKCM Consulting">
+          <div className="flex items-center gap-3">
+            <LogoMark />
+            <div className="text-sm font-semibold uppercase tracking-[0.3em] text-white/80">
+              MKCM
+            </div>
+          </div>
+        </Link>
+        <div className="hidden flex-1 items-center justify-end gap-6 text-sm font-medium text-white/80 md:flex">
+          {navItems.map((item) => (
+            <NavItem
+              key={item.href}
+              label={item.label}
+              href={item.href}
+              active={pathname === item.href}
+            />
+          ))}
+        </div>
+        <div className="flex items-center gap-3 md:hidden">
+          <span className="text-xs uppercase tracking-[0.2em] text-white/60">Menu</span>
         </div>
       </nav>
     </header>
@@ -81,31 +56,37 @@ function NavItem({
   return (
     <Link
       href={href}
-      style={{
-        color: "white",
-        textDecoration: "none",
-        fontSize: 16,
-        fontWeight: 600,
-        position: "relative",
-        paddingBottom: 6,
-      }}
+      className={`relative pb-1 transition ${
+        active ? "text-white" : "text-white/70 hover:text-white"
+      }`}
     >
       {label}
-
       {active && (
-        <span
-          style={{
-            position: "absolute",
-            left: "50%",
-            bottom: 0,
-            transform: "translateX(-50%)",
-            width: 18,
-            height: 4,
-            backgroundColor: "white",
-            borderRadius: 999,
-          }}
-        />
+        <span className="absolute left-1/2 top-full h-1 w-6 -translate-x-1/2 rounded-full bg-[#3DD6C6]" />
       )}
     </Link>
+  );
+}
+
+function LogoMark() {
+  return (
+    <svg
+      width="42"
+      height="42"
+      viewBox="0 0 42 42"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <rect width="42" height="42" rx="12" fill="#10243A" />
+      <path
+        d="M12 27V15h4.8l4.2 4.4L25.2 15H30v12h-4.1v-6.1l-4.7 4.6-4.6-4.6V27H12Z"
+        fill="#3DD6C6"
+      />
+      <path
+        d="M30.2 12.6 26.6 9h5.4v5.4l-1.8-1.8-3.3 3.3-1.6-1.6 3.9-3.9Z"
+        fill="#F5B447"
+      />
+    </svg>
   );
 }

@@ -8,20 +8,12 @@ module.exports = {
     extend: {
       colors: {
         mkcm: {
-          50: "#eef6ff",
-          100: "#dbeafe",
-          200: "#bfdbfe",
-          300: "#93c5fd",
-          400: "#60a5fa",
-          500: "#3b82f6",
-          600: "#2563eb",
-          700: "#1d4ed8",
-          800: "#1e40af",
-          900: "#1e3a8a",
-        },
-        accent: {
-          500: "#f59e0b",
-          600: "#d97706",
+          navy: "#0B1F33",
+          deep: "#071221",
+          slate: "#10243A",
+          mist: "#1D334B",
+          glow: "#3DD6C6",
+          accent: "#F5B447",
         },
       },
     },
