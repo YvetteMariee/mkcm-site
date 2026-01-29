@@ -1,240 +1,95 @@
 import Image from "next/image";
+import AnimatedSection from "./AnimatedSection";
+import { AnimatedList, AnimatedListItem } from "./AnimatedList";
 
-const workItems = [
+const serviceCards = [
   {
-    title: "Plateforme de ressources",
-    desc: "Structure éditoriale claire, navigation filtrée et UI responsive.",
-    tag: "Produit",
+    title: "Stratégie & gouvernance",
+    text: "Diagnostic, priorisation et trajectoire numérique alignée avec vos objectifs académiques ou métier.",
+    icon: "/illustrations/service-web.svg",
   },
   {
-    title: "Identité pour un collectif",
-    desc: "Système visuel, kit social media et micro-site de lancement.",
-    tag: "Marque",
+    title: "Applications sur mesure",
+    text: "Conception et développement d'outils fiables, documentés et faciles à maintenir.",
+    icon: "/illustrations/service-mobile.svg",
   },
   {
-    title: "Outil de pilotage interne",
-    desc: "Tableaux de bord, composants modulaires et design system léger.",
-    tag: "Interface",
+    title: "Expérience utilisateur",
+    text: "Parcours sobres, interfaces accessibles et design system cohérent.",
+    icon: "/illustrations/service-ui.svg",
   },
 ];
 
-const expertiseItems = [
+const approach = [
   {
-    title: "Stratégie de contenu",
-    desc: "Positionnement, plan éditorial, hiérarchisation des messages.",
+    title: "Cadrage clair",
+    desc: "Ateliers courts, objectifs validés, documentation structurée.",
   },
   {
-    title: "Design d’interface",
-    desc: "Wireframes, prototypes, UI kit et documentation produit.",
+    title: "Livrables concrets",
+    desc: "Roadmap, architecture, prototypes et recommandations actionnables.",
   },
   {
-    title: "Développement web",
-    desc: "Sites rapides, accessibilité, optimisation de performance.",
-  },
-  {
-    title: "Direction artistique",
-    desc: "Typographies, palettes, iconographie et guides d’usage.",
+    title: "Suivi rigoureux",
+    desc: "Reporting continu, indicateurs fiables et transfert de compétences.",
   },
 ];
 
-const aboutCards = [
-  {
-    title: "Notre mission",
-    desc:
-      "Clarifier vos objectifs, cadrer un plan actionnable et livrer des solutions digitales utiles à votre business.",
-    image: "/illustrations/mission.svg",
-  },
-  {
-    title: "Nos objectifs",
-    desc:
-      "Créer de la valeur mesurable : plus de demandes, plus de confiance, plus de conversions.",
-    image: "/illustrations/objectives.svg",
-  },
-];
-
-export default function Services() {
+export default function ServicesOverview() {
   return (
-    <section style={{ backgroundColor: "#ffffff" }}>
-      <div style={{ maxWidth: 1160, margin: "0 auto", padding: "96px 24px" }} id="studio">
-        <div
-          style={{
-            display: "grid",
-            gap: 32,
-            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-            alignItems: "center",
-          }}
-        >
-          <div>
-            <p style={{ textTransform: "uppercase", letterSpacing: "0.24em", fontSize: 12, color: "#5c6b79" }}>
-              Le studio
-            </p>
-            <h2 style={{ fontSize: 38, margin: "16px 0" }}>
-              Une équipe légère pour des projets bien cadrés.
-            </h2>
-            <p style={{ color: "#5c6b79", lineHeight: 1.7 }}>
-              Nous travaillons en cycles courts, avec un point hebdomadaire et des livrables
-              validés étape par étape. Chaque mission reste focalisée sur l’essentiel.
-            </p>
-          </div>
-          <div
-            style={{
-              borderRadius: 24,
-              padding: 24,
-              background: "#f8f6f2",
-              display: "grid",
-              gap: 16,
-              border: "1px solid rgba(16, 20, 24, 0.06)",
-            }}
-          >
-            {[
-              "Cadrage en 2 semaines",
-              "Design modulaire",
-              "Collaboration asynchrone",
-              "Documentation livrée",
-            ].map((item) => (
-              <div key={item} style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                <span
-                  style={{
-                    width: 10,
-                    height: 10,
-                    borderRadius: 999,
-                    backgroundColor: "#ff7a59",
-                    display: "inline-block",
-                  }}
-                />
-                <span style={{ fontWeight: 600 }}>{item}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      <div id="work" style={{ backgroundColor: "#f8f6f2" }}>
-        <div style={{ maxWidth: 1160, margin: "0 auto", padding: "96px 24px" }}>
-          <div style={{ display: "flex", justifyContent: "space-between", gap: 24, flexWrap: "wrap" }}>
-            <div>
-              <p style={{ textTransform: "uppercase", letterSpacing: "0.22em", fontSize: 12, color: "#5c6b79" }}>
-                Travaux sélectionnés
-              </p>
-              <h2 style={{ fontSize: 38, margin: "16px 0" }}>Quelques missions récentes.</h2>
-            </div>
-            <p style={{ color: "#5c6b79", maxWidth: 320 }}>
-              Des projets neutres et variés pour des équipes produit, des organismes publics et des PME.
-            </p>
-          </div>
-
-          <div
-            style={{
-              marginTop: 32,
-              display: "grid",
-              gap: 20,
-              gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
-            }}
-          >
-            {workItems.map((item) => (
-              <div
+    <AnimatedSection title="Des services pensés pour vos enjeux IT" subtitle="Expertise">
+      <div className="grid gap-6 lg:grid-cols-[1.1fr_1fr]">
+        <div className="space-y-6 text-slate-600">
+          <p className="text-base leading-relaxed">
+            Nous intervenons comme partenaire de confiance pour vos missions de
+            conseil IT, de formation et de développement applicatif. Chaque
+            intervention est conçue pour être comprise, défendue et réutilisée
+            dans un cadre académique ou professionnel.
+          </p>
+          <AnimatedList className="grid gap-4 sm:grid-cols-3">
+            {approach.map((item) => (
+              <AnimatedListItem
                 key={item.title}
-                style={{
-                  backgroundColor: "#ffffff",
-                  borderRadius: 22,
-                  padding: 24,
-                  border: "1px solid rgba(16, 20, 24, 0.08)",
-                  display: "grid",
-                  gap: 12,
-                }}
-                className="card-hover"
+                className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
               >
-                <span style={{ fontSize: 12, color: "#ff7a59", textTransform: "uppercase", letterSpacing: "0.2em" }}>
-                  {item.tag}
-                </span>
-                <h3 style={{ margin: 0, fontSize: 20 }}>{item.title}</h3>
-                <p style={{ margin: 0, color: "#5c6b79", lineHeight: 1.5 }}>{item.desc}</p>
-                <span style={{ fontSize: 13, color: "#101418" }}>Étude synthétique →</span>
-              </div>
+                <h3 className="text-sm font-semibold text-brand-900">
+                  {item.title}
+                </h3>
+                <p className="mt-2 text-sm text-slate-600">{item.desc}</p>
+              </AnimatedListItem>
             ))}
-          </div>
+          </AnimatedList>
         </div>
-      </div>
-
-      <div id="about" style={{ backgroundColor: "#ffffff" }}>
-        <div style={{ maxWidth: 1160, margin: "0 auto", padding: "96px 24px" }}>
-          <div style={{ textAlign: "center" }}>
-            <p style={{ textTransform: "uppercase", letterSpacing: "0.22em", fontSize: 12, color: "#5c6b79" }}>
-              En savoir plus sur nous
+        <AnimatedList className="grid gap-4 sm:grid-cols-2">
+          {serviceCards.map((card) => (
+            <AnimatedListItem
+              key={card.title}
+              className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+            >
+              <Image
+                src={card.icon}
+                alt=""
+                width={56}
+                height={56}
+                className="h-12 w-12"
+              />
+              <h3 className="mt-4 text-base font-semibold text-brand-900">
+                {card.title}
+              </h3>
+              <p className="mt-2 text-sm text-slate-600">{card.text}</p>
+            </AnimatedListItem>
+          ))}
+          <AnimatedListItem className="rounded-2xl border border-brand-200 bg-brand-50 p-5">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-brand-600">
+              100% conseil
             </p>
-            <h2 style={{ fontSize: 38, margin: "16px 0" }}>Un accompagnement fiable et humain.</h2>
-          </div>
-          <div
-            style={{
-              marginTop: 32,
-              display: "grid",
-              gap: 24,
-              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-            }}
-          >
-            {aboutCards.map((card) => (
-              <div
-                key={card.title}
-                style={{
-                  backgroundColor: "#f8f6f2",
-                  borderRadius: 24,
-                  padding: 28,
-                  border: "1px solid rgba(16, 20, 24, 0.08)",
-                  display: "grid",
-                  gap: 16,
-                  textAlign: "center",
-                }}
-                className="card-hover"
-              >
-                <Image
-                  src={card.image}
-                  alt=""
-                  width={220}
-                  height={160}
-                  style={{ width: "100%", height: "auto", maxWidth: 220, margin: "0 auto" }}
-                />
-                <h3 style={{ margin: 0, fontSize: 20 }}>{card.title}</h3>
-                <p style={{ margin: 0, color: "#5c6b79", lineHeight: 1.6 }}>{card.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      <div id="expertise" style={{ backgroundColor: "#ffffff" }}>
-        <div style={{ maxWidth: 1160, margin: "0 auto", padding: "96px 24px" }}>
-          <div style={{ textAlign: "center" }}>
-            <p style={{ textTransform: "uppercase", letterSpacing: "0.22em", fontSize: 12, color: "#5c6b79" }}>
-              Expertises
+            <p className="mt-3 text-sm text-slate-700">
+              Des livrables clairs, adaptés à la validation académique et à la
+              prise de décision en entreprise.
             </p>
-            <h2 style={{ fontSize: 38, margin: "16px 0" }}>Un spectre complet, sans superflu.</h2>
-          </div>
-          <div
-            style={{
-              marginTop: 32,
-              display: "grid",
-              gap: 20,
-              gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
-            }}
-          >
-            {expertiseItems.map((item) => (
-              <div
-                key={item.title}
-                style={{
-                  backgroundColor: "#f8f6f2",
-                  borderRadius: 20,
-                  padding: 24,
-                  border: "1px solid rgba(16, 20, 24, 0.06)",
-                }}
-                className="card-hover"
-              >
-                <h3 style={{ margin: "0 0 12px", fontSize: 18 }}>{item.title}</h3>
-                <p style={{ margin: 0, color: "#5c6b79", lineHeight: 1.6 }}>{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+          </AnimatedListItem>
+        </AnimatedList>
       </div>
-    </section>
+    </AnimatedSection>
   );
 }

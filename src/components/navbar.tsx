@@ -1,111 +1,49 @@
 "use client";
+
 import Image from "next/image";
-
-
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-export default function Navbar() {
+const navItems = [
+  { label: "Accueil", href: "/" },
+  { label: "Services", href: "/services" },
+  { label: "Conseil IT", href: "/conseil-it" },
+  { label: "Formation", href: "/formation" },
+  { label: "Opportunités", href: "/opportunites" },
+  { label: "À propos", href: "/a-propos" },
+];
+
+export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header style={{ width: "100%", backgroundColor: "#f58220" }}>
-      <nav
-        style={{
-          maxWidth: 1160,
-          margin: "0 auto",
-          padding: "16px 24px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-        }}
-      >
-      
-      {/* Logo */}
-<Link href="/">
-  <Image
-    src="/logo-mkcm.svg"
-    alt="MKCM Consulting Services"
-    width={180}
-    height={50}
-    priority
-    
-  />
-</Link>
-
-
-
-        {/* Menu */}
-        <div style={{ display: "flex", gap: 24, flexWrap: "wrap" }}>
-          <NavItem label="Accueil" href="/" active={pathname === "/"} />
-          <NavItem
-            label="Services"
-            href="/services"
-            active={pathname === "/services"}
+    <header className="sticky top-0 z-40 w-full border-b border-slate-200 bg-white/90 backdrop-blur">
+      <nav className="mx-auto flex w-full max-w-6xl items-center justify-between gap-6 px-6 py-4">
+        <Link href="/" className="flex items-center gap-3">
+          <Image
+            src="/mkcm-logo.svg"
+            alt="MKCM Consulting"
+            width={140}
+            height={36}
+            priority
           />
-          <NavItem
-            label="Méthode"
-            href="/methodes"
-            active={pathname === "/methodes"}
-          />
-          <NavItem
-            label="Réalisations"
-            href="/realisations"
-            active={pathname === "/realisations"}
-          />
-          <NavItem
-            label="À propos"
-            href="/a-propos"
-            active={pathname === "/a-propos"}
-          />
-          <NavItem
-            label="Contact"
-            href="/contact"
-            active={pathname === "/contact"}
-          />
+        </Link>
+        <div className="flex flex-wrap items-center gap-5 text-sm font-semibold text-slate-700">
+          {navItems.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={`transition-colors hover:text-brand-600 ${
+                pathname === item.href
+                  ? "text-brand-700"
+                  : "text-slate-700"
+              }`}
+            >
+              {item.label}
+            </Link>
+          ))}
         </div>
       </nav>
     </header>
-  );
-}
-
-function NavItem({
-  label,
-  href,
-  active,
-}: {
-  label: string;
-  href: string;
-  active: boolean;
-}) {
-  return (
-    <Link
-      href={href}
-      style={{
-        color: "white",
-        textDecoration: "none",
-        fontSize: 16,
-        fontWeight: 600,
-        position: "relative",
-        paddingBottom: 6,
-      }}
-    >
-      {label}
-
-      {active && (
-        <span
-          style={{
-            position: "absolute",
-            left: "50%",
-            bottom: 0,
-            transform: "translateX(-50%)",
-            width: 18,
-            height: 4,
-            backgroundColor: "white",
-            borderRadius: 999,
-          }}
-        />
-      )}
-    </Link>
   );
 }
