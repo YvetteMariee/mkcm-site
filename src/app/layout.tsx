@@ -7,12 +7,17 @@ import Footer from "@/components/footer";
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
-  title: "MKCM Consulting | IT & Ingénierie Numérique",
+  title: {
+    default: "MKCM Consulting | IT & Ingénierie Numérique",
+    template: "%s | MKCM Consulting",
+  },
   description:
-    "Site vitrine professionnel en consulting IT et ingénierie numérique. Services, formation, carrière et expertise digitale.",
+    "Site vitrine professionnel en consulting IT et ingénierie numérique : services, IT consulting, formation, carrière et présentation de l'équipe.",
 };
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="fr">
       <body className={inter.className}>

@@ -6,6 +6,12 @@
   color-scheme: light;
 }
 
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   @apply bg-brand-light text-brand-dark antialiased;
 }
