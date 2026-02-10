@@ -12,20 +12,27 @@ const navLinks = [
 export default function Footer() {
   return (
     <footer className="border-t border-[#1f3779] bg-[#050b1d] text-white/80">
+      {/* ===== TOP FOOTER ===== */}
       <div className="mx-auto grid max-w-6xl gap-10 px-6 py-14 md:grid-cols-12">
-        <div className="md:col-span-5">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#26e0ff]">MKCM Digital Factory</p>
-          <h3 className="mt-3 text-2xl font-semibold leading-tight text-white">
+        {/* Présentation */}
+        <div className="md:col-span-4">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#26e0ff]">
+            MKCM Digital Factory
+          </p>
+          <h3 className="mt-3 text-xl font-semibold leading-tight text-white">
             Développement web, logiciels métiers et solutions cloud sécurisées.
           </h3>
-          <p className="mt-4 max-w-md text-sm leading-7 text-white/70">
-            Nous construisons des produits numériques performants grâce à une expertise full-stack,
-            DevOps, cybersécurité et UX/UI orientée business.
+          <p className="mt-4 text-sm leading-7 text-white/70">
+            Nous construisons des produits numériques performants grâce à une expertise
+            full-stack, DevOps, cybersécurité et UX/UI orientée business.
           </p>
         </div>
 
-        <div className="md:col-span-3">
-          <h4 className="text-sm font-semibold uppercase tracking-[0.18em] text-white">Navigation</h4>
+        {/* Navigation */}
+        <div className="md:col-span-2">
+          <h4 className="text-sm font-semibold uppercase tracking-[0.18em] text-white">
+            Navigation
+          </h4>
           <ul className="mt-4 grid gap-2 text-sm">
             {navLinks.map((link) => (
               <li key={link.href}>
@@ -37,17 +44,80 @@ export default function Footer() {
           </ul>
         </div>
 
-        <div className="md:col-span-4">
-          <h4 className="text-sm font-semibold uppercase tracking-[0.18em] text-white">Pôles Tech</h4>
+        {/* Pôles Tech */}
+        <div className="md:col-span-3">
+          <h4 className="text-sm font-semibold uppercase tracking-[0.18em] text-white">
+            Pôles Tech
+          </h4>
           <ul className="mt-4 grid gap-2 text-sm leading-6 text-white/70">
             <li>⚙️ Développement Full-Stack</li>
             <li>☁️ Cloud & DevOps</li>
             <li>🛡️ Cybersécurité applicative</li>
-            <li>📊 Data, dashboards & performance</li>
+            <li>📊 Data & performance</li>
           </ul>
+        </div>
+
+        {/* Contact */}
+        <div className="md:col-span-3">
+          <h4 className="text-sm font-semibold uppercase tracking-[0.18em] text-white">
+            Contact
+          </h4>
+
+          <ul className="mt-4 space-y-3 text-sm text-white/70">
+            <li className="flex items-center gap-3">
+              ✉️{" "}
+              <a
+                href="mailto:contact@mkcm-consulting.com"
+                className="hover:text-[#26e0ff]"
+              >
+                contact@mkcm-consulting.com
+              </a>
+            </li>
+            <li className="flex items-center gap-3">
+              📞{" "}
+              <a href="tel:+237000000000" className="hover:text-[#26e0ff]">
+                (+237) 6 93 24 30 01
+              </a>
+            </li>
+            <li className="flex items-start gap-3">
+              📍 Douala, Cameroun -  BP/24039
+            </li>
+          </ul>
+
+          <div className="mt-5 flex gap-4 text-sm text-white/60">
+            <a href="#" className="hover:text-[#26e0ff]">Facebook</a>
+            <a href="#" className="hover:text-[#26e0ff]">LinkedIn</a>
+            <a href="#" className="hover:text-[#26e0ff]">Twitter</a>
+            <a href="#" className="hover:text-[#26e0ff]">Instagram</a>
+          </div>
         </div>
       </div>
 
+      {/* ===== LOCALISATION ===== */}
+      <div className="border-t border-white/10 px-6 py-10">
+        <div className="mx-auto max-w-6xl">
+          <h4 className="text-sm font-semibold uppercase tracking-[0.18em] text-white">
+            Localisation
+          </h4>
+          <p className="mt-2 text-sm text-white/70">
+            📍 Douala, Cameroun
+          </p>
+
+          <div className="mt-4 overflow-hidden rounded-xl border border-white/10">
+            <iframe
+              title="Localisation MKCM Consulting Services"
+              src="https://www.google.com/maps?q=Douala%20Cameroun&output=embed"
+              width="100%"
+              height="260"
+              className="w-full"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* ===== BOTTOM ===== */}
       <div className="border-t border-white/10 px-6 py-4 text-center text-xs text-white/60">
         © {new Date().getFullYear()} MKCM Consulting — Société IT & Digital.
       </div>

@@ -32,7 +32,7 @@ export default function FormationPage() {
         <div className="grid items-center gap-8 md:grid-cols-2">
           <AnimatedSection>
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#9fb5ff]">Learning by Building</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#9fb5ff]">Formation et Expertise numérique</p>
               <h2 className="mt-3 text-3xl font-semibold leading-tight text-white">Formations techniques immersives</h2>
               <p className="mt-4 text-sm leading-7 text-[#b7c8ef]">
                 Chaque module combine théorie, code review, exercices pratiques et bonnes pratiques

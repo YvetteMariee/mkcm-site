@@ -62,7 +62,66 @@ export default function NousPage() {
             </AnimatedSection>
           ))}
         </div>
+        <section className="border-t border-[#213a7b] bg-[#050b1d]">
+  <div className="mx-auto max-w-6xl px-6 py-20">
+    <AnimatedSection>
+      <div className="mb-12 max-w-2xl">
+        <h2 className="text-2xl font-semibold text-white">
+          Travaillons ensemble
+        </h2>
+        <p className="mt-4 text-sm leading-7 text-[#b7c8ef]">
+          Vous avez un projet numérique, un besoin en développement logiciel
+          ou en accompagnement IT ? Échangeons pour construire une solution
+          adaptée à vos enjeux.
+        </p>
+      </div>
+    </AnimatedSection>
+
+    <AnimatedSection delay={0.1}>
+      <form className="grid max-w-3xl gap-6">
+        <div className="grid gap-6 md:grid-cols-2">
+          <input
+            type="text"
+            placeholder="Nom complet"
+            className="rounded-xl border border-white/10 bg-[#0c1737] px-4 py-3 text-sm text-white placeholder-white/40 focus:outline-none focus:ring-1 focus:ring-[#26e0ff]"
+            required
+          />
+          <input
+            type="email"
+            placeholder="Adresse email"
+            className="rounded-xl border border-white/10 bg-[#0c1737] px-4 py-3 text-sm text-white placeholder-white/40 focus:outline-none focus:ring-1 focus:ring-[#26e0ff]"
+            required
+          />
+        </div>
+
+        <input
+          type="text"
+          placeholder="Entreprise (optionnel)"
+          className="rounded-xl border border-white/10 bg-[#0c1737] px-4 py-3 text-sm text-white placeholder-white/40 focus:outline-none focus:ring-1 focus:ring-[#26e0ff]"
+        />
+
+        <textarea
+          rows={5}
+          placeholder="Décrivez votre besoin ou votre projet"
+          className="rounded-xl border border-white/10 bg-[#0c1737] px-4 py-3 text-sm text-white placeholder-white/40 focus:outline-none focus:ring-1 focus:ring-[#26e0ff]"
+          required
+        />
+
+        <button
+          type="submit"
+          className="w-fit rounded-xl bg-[#26e0ff] px-6 py-3 text-sm font-semibold text-[#050b1d] transition hover:bg-[#1fc9e5]"
+        >
+          Envoyer le message
+        </button>
+      </form>
+    </AnimatedSection>
+  </div>
+</section>
+
       </section>
     </>
+
+
+
   );
 }
