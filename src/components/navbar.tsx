@@ -42,7 +42,7 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 label={link.label}
-                active={pathname === link.href}
+                active={isActive(pathname, link.href)}
               />
             ))}
           </div>
@@ -56,7 +56,7 @@ export default function Navbar() {
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
                 className={`rounded-lg px-3 py-2 text-sm font-medium ${
-                  pathname === link.href
+                  isActive(pathname, link.href)
                     ? "bg-brand-orange text-white"
                     : "text-white/90 hover:bg-white/10"
                 }`}
@@ -90,4 +90,10 @@ function NavLink({
       {label}
     </Link>
   );
+}
+
+
+function isActive(pathname: string, href: string) {
+  if (href === "/") return pathname === "/";
+  return pathname === href || pathname.startsWith(`${href}/`);
 }
