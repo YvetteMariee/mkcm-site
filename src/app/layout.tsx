@@ -1,25 +1,23 @@
+import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Navbar from "../components/navbar";
-import Footer from "../components/footer";
+import "./globals.css";
+import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
 
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-});
+const inter = Inter({ subsets: ["latin"], display: "swap" });
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export const metadata: Metadata = {
+  title: "MKCM Consulting | IT & Ingénierie Numérique",
+  description:
+    "Site vitrine professionnel en consulting IT et ingénierie numérique. Services, formation, carrière et expertise digitale.",
+};
+
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="fr">
-      <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </head>
       <body className={inter.className}>
         <Navbar />
-        {children}
+        <main>{children}</main>
         <Footer />
       </body>
     </html>

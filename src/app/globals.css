@@ -1,48 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
-  --sand-50: #f8f6f2;
-  --sand-100: #f1ede6;
-  --ink-900: #101418;
-  --ink-700: #2d3640;
-  --ink-500: #5c6b79;
-  --accent-500: #ff7a59;
-  --accent-700: #d95f41;
-  --card-border: rgba(16, 20, 24, 0.08);
+  color-scheme: light;
 }
 
-* {
-  box-sizing: border-box;
+body {
+  @apply bg-brand-light text-brand-dark antialiased;
 }
 
-html, body {
-  margin: 0;
-  padding: 0;
-  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background: var(--sand-50);
-  color: var(--ink-900);
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-section {
-  width: 100%;
-}
-
-h1, h2, h3 {
-  letter-spacing: -0.02em;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.card-hover {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.card-hover:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 18px 40px rgba(16, 20, 24, 0.12);
+::selection {
+  background: #f58220;
+  color: #fff;
 }

@@ -1,111 +1,41 @@
 "use client";
+
 import Image from "next/image";
-
-
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+
+const links = [
+  { href: "/", label: "Accueil" },
+  { href: "/services", label: "Services" },
+  { href: "/it-consulting", label: "IT Consulting" },
+  { href: "/formation", label: "Formation" },
+  { href: "/carriere", label: "Carrière" },
+  { href: "/nous", label: "Nous" },
+];
 
 export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <header style={{ width: "100%", backgroundColor: "#f58220" }}>
-      <nav
-        style={{
-          maxWidth: 1160,
-          margin: "0 auto",
-          padding: "16px 24px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-        }}
-      >
-      
-      {/* Logo */}
-<Link href="/">
-  <Image
-    src="/logo-mkcm.svg"
-    alt="MKCM Consulting Services"
-    width={180}
-    height={50}
-    priority
-    
-  />
-</Link>
-
-
-
-        {/* Menu */}
-        <div style={{ display: "flex", gap: 24, flexWrap: "wrap" }}>
-          <NavItem label="Accueil" href="/" active={pathname === "/"} />
-          <NavItem
-            label="Services"
-            href="/services"
-            active={pathname === "/services"}
-          />
-          <NavItem
-            label="Méthode"
-            href="/methodes"
-            active={pathname === "/methodes"}
-          />
-          <NavItem
-            label="Réalisations"
-            href="/realisations"
-            active={pathname === "/realisations"}
-          />
-          <NavItem
-            label="À propos"
-            href="/a-propos"
-            active={pathname === "/a-propos"}
-          />
-          <NavItem
-            label="Contact"
-            href="/contact"
-            active={pathname === "/contact"}
-          />
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-brand-dark/95 backdrop-blur">
+      <nav className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-4">
+        <Link href="/" className="shrink-0">
+          <Image src="/logo-mkcm.svg" alt="MKCM" width={170} height={48} priority />
+        </Link>
+        <div className="flex flex-wrap items-center gap-4 text-sm font-medium text-white/90">
+          {links.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className={`rounded-full px-3 py-1.5 transition ${
+                pathname === link.href ? "bg-brand-orange text-white" : "hover:bg-white/10"
+              }`}
+            >
+              {link.label}
+            </Link>
+          ))}
         </div>
       </nav>
     </header>
-  );
-}
-
-function NavItem({
-  label,
-  href,
-  active,
-}: {
-  label: string;
-  href: string;
-  active: boolean;
-}) {
-  return (
-    <Link
-      href={href}
-      style={{
-        color: "white",
-        textDecoration: "none",
-        fontSize: 16,
-        fontWeight: 600,
-        position: "relative",
-        paddingBottom: 6,
-      }}
-    >
-      {label}
-
-      {active && (
-        <span
-          style={{
-            position: "absolute",
-            left: "50%",
-            bottom: 0,
-            transform: "translateX(-50%)",
-            width: 18,
-            height: 4,
-            backgroundColor: "white",
-            borderRadius: 999,
-          }}
-        />
-      )}
-    </Link>
   );
 }

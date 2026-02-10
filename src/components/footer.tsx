@@ -1,68 +1,37 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
-    <footer
-      style={{
-        backgroundColor: "#0b141a",
-        color: "#d6dde3",
-      }}
-    >
-      <div
-        style={{
-          maxWidth: 1160,
-          margin: "0 auto",
-          padding: "64px 24px",
-          display: "grid",
-          gap: 32,
-          gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-        }}
-      >
+    <footer className="bg-brand-dark text-white/80">
+      <div className="mx-auto grid max-w-6xl gap-10 px-6 py-14 md:grid-cols-3">
         <div>
-          <div style={{ fontWeight: 800, color: "#ffffff", fontSize: 20 }}>MKCM</div>
-          <p style={{ marginTop: 12, lineHeight: 1.6, fontSize: 13 }}>
-            Nous offrons des services de haute qualité en utilisant des technologies modernes
-            pour accélérer votre croissance.
+          <h3 className="text-lg font-semibold text-white">MKCM Consulting</h3>
+          <p className="mt-3 text-sm leading-6">
+            Cabinet de consulting IT et d&apos;ingénierie numérique. Nous aidons les organisations à
+            accélérer leur transformation digitale avec des solutions robustes et pragmatiques.
           </p>
         </div>
         <div>
-          <div style={{ fontWeight: 700, marginBottom: 12 }}>Liens utiles</div>
-          <div style={{ display: "grid", gap: 8, fontSize: 13 }}>
-            <a href="/">Accueil</a>
-            <a href="/services">Services</a>
-            <a href="/methodes">Méthode</a>
-            <a href="/realisations">Réalisations</a>
-            <a href="/a-propos">À propos</a>
-            <a href="/contact">Contact</a>
-          </div>
+          <h3 className="text-sm font-semibold uppercase tracking-widest text-white">Navigation</h3>
+          <ul className="mt-3 grid gap-2 text-sm">
+            <li><Link href="/services">Services</Link></li>
+            <li><Link href="/it-consulting">IT Consulting</Link></li>
+            <li><Link href="/formation">Formation</Link></li>
+            <li><Link href="/carriere">Carrière</Link></li>
+            <li><Link href="/nous">Nous</Link></li>
+          </ul>
         </div>
         <div>
-          <div style={{ fontWeight: 700, marginBottom: 12 }}>Contact</div>
-          <div style={{ display: "grid", gap: 8, fontSize: 13 }}>
-            <div>support@mkcm-consulting.com</div>
-            <div>(+237) 6 52 71 04 32</div>
-            <div>Douala, Cameroun</div>
-          </div>
-        </div>
-        <div style={{ backgroundColor: "#ffffff", borderRadius: 12, overflow: "hidden" }}>
-          <iframe
-            title="map"
-            src="https://www.google.com/maps?q=Douala&output=embed"
-            width="100%"
-            height="200"
-            style={{ border: 0 }}
-            loading="lazy"
-          />
+          <h3 className="text-sm font-semibold uppercase tracking-widest text-white">Contact</h3>
+          <ul className="mt-3 grid gap-2 text-sm">
+            <li>contact@mkcm-consulting.com</li>
+            <li>+33 1 89 00 00 00</li>
+            <li>Paris • Lyon • Télétravail</li>
+          </ul>
         </div>
       </div>
-      <div
-        style={{
-          textAlign: "center",
-          padding: "16px 24px",
-          fontSize: 12,
-          color: "#94a3b8",
-          borderTop: "1px solid rgba(255,255,255,0.08)",
-        }}
-      >
-        Copyright © {new Date().getFullYear()} MKCM. Tous droits réservés.
+      <div className="border-t border-white/10 px-6 py-4 text-center text-xs text-white/60">
+        © {new Date().getFullYear()} MKCM Consulting. Tous droits réservés.
       </div>
     </footer>
   );
