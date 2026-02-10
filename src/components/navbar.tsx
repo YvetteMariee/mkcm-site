@@ -9,7 +9,11 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <header style={{ width: "100%", backgroundColor: "#f58220" }}>
+    <header style={{
+      position: "sticky",
+    top: 0,
+    zIndex: 1000,
+       width: "100%", backgroundColor: "#0B1F33" }}>
       <nav
         style={{
           maxWidth: 1160,
@@ -23,47 +27,52 @@ export default function Navbar() {
       
       {/* Logo */}
 <Link href="/">
-  <Image
-    src="/logo-mkcm.svg"
-    alt="MKCM Consulting Services"
-    width={180}
-    height={50}
-    priority
-    
-  />
+  <div
+    style={{
+      backgroundColor: "white",
+      padding: "10px 16px",
+      borderRadius: 4,
+      display: "flex",
+      alignItems: "center",
+      gap: 4,
+    }}
+  >
+    <span
+      style={{
+        color: "#0B1F33",
+        fontSize: 26,
+        fontWeight: 800,
+        letterSpacing: "-0.5px",
+      }}
+    >
+      MK
+    </span>
+
+    <span
+      style={{
+        color: "#F58220",
+        fontSize: 26,
+        fontWeight: 800,
+        letterSpacing: "-0.5px",
+      }}
+    >
+      CM
+    </span>
+  </div>
 </Link>
 
 
 
         {/* Menu */}
         <div style={{ display: "flex", gap: 24, flexWrap: "wrap" }}>
-          <NavItem label="Accueil" href="/" active={pathname === "/"} />
-          <NavItem
-            label="Services"
-            href="/services"
-            active={pathname === "/services"}
-          />
-          <NavItem
-            label="Méthode"
-            href="/methodes"
-            active={pathname === "/methodes"}
-          />
-          <NavItem
-            label="Réalisations"
-            href="/realisations"
-            active={pathname === "/realisations"}
-          />
-          <NavItem
-            label="À propos"
-            href="/a-propos"
-            active={pathname === "/a-propos"}
-          />
-          <NavItem
-            label="Contact"
-            href="/contact"
-            active={pathname === "/contact"}
-          />
-        </div>
+  <NavItem label="Accueil" href="/" active={pathname === "/"} />
+  <NavItem label="Services" href="/services" active={pathname === "/services"} />
+  <NavItem label="IT Consulting" href="/it-consulting" active={pathname === "/it-consulting"} />
+  <NavItem label="Formations" href="/formations" active={pathname === "/formations"} />
+  <NavItem label="Carrière" href="/carriere" active={pathname === "/carriere"} />
+  <NavItem label="Nous" href="/nous" active={pathname === "/nous"} />
+</div>
+
       </nav>
     </header>
   );
@@ -94,16 +103,18 @@ function NavItem({
 
       {active && (
         <span
-          style={{
-            position: "absolute",
-            left: "50%",
-            bottom: 0,
-            transform: "translateX(-50%)",
-            width: 18,
-            height: 4,
-            backgroundColor: "white",
-            borderRadius: 999,
-          }}
+         style={{
+  position: "absolute",
+  left: "50%",
+  bottom: 0,
+  transform: "translateX(-50%)",
+  width: active ? 18 : 0,
+  height: 4,
+  backgroundColor: "white",
+  borderRadius: 999,
+  transition: "width 0.12s ease-out",
+}}
+
         />
       )}
     </Link>

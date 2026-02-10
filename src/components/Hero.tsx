@@ -42,7 +42,7 @@ export default function Hero() {
             style={{
               padding: "10px 18px",
               borderRadius: 999,
-              border: "1px solid rgba(16, 20, 24, 0.12)",
+              border: "1px solid rgba(9, 39, 45, 0.12)",
               fontSize: 14,
             }}
           >

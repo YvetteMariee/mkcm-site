@@ -46,3 +46,21 @@ a {
   transform: translateY(-4px);
   box-shadow: 0 18px 40px rgba(16, 20, 24, 0.12);
 }
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+.card-service {
+  transition: all 0.3s ease-in-out;
+}
+
+.card-service:hover {
+  transform: translateY(-10px);
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 140, 0, 0.5);
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

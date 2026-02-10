@@ -1,350 +1,191 @@
-import Image from "next/image";
+"use client";
 
-const serviceSections = [
-  {
-    title: "Développement Web",
-    description:
-      "Processus d’écriture d’un site ou d’une page web dans un langage technique, une étape incontournable pour qu’un contenu soit mis en ligne et atteigne ses lecteurs.",
-    cards: [
-      {
-        title: "Développement d'applications web",
-        text: "Problème : outils lents. Solution : app web rapide. Résultat : efficacité accrue.",
-        icon: "/illustrations/service-web.svg",
-      },
-      {
-        title: "Développement de sites web et e-commerce",
-        text: "Problème : ventes faibles. Solution : site optimisé. Résultat : conversions en hausse.",
-        icon: "/illustrations/service-ecommerce.svg",
-      },
-      {
-        title: "Développement d'applications mobile",
-        text: "Problème : clients dispersés. Solution : app mobile. Résultat : engagement renforcé.",
-        icon: "/illustrations/service-mobile.svg",
-      },
-    ],
-  },
-  {
-    title: "Design & Conception",
-    description:
-      "Processus de conception graphique pour créer une identité claire et cohérente sur tous vos supports.",
-    cards: [
-      {
-        title: "Design graphique",
-        text: "Problème : image floue. Solution : identité claire. Résultat : marque crédible.",
-        icon: "/illustrations/service-graphic.svg",
-      },
-      {
-        title: "Design UI (Interface Utilisateur)",
-        text: "Problème : navigation confuse. Solution : UI structurée. Résultat : usage fluide.",
-        icon: "/illustrations/service-ui.svg",
-      },
-      {
-        title: "Design UX (Expérience Utilisateur)",
-        text: "Problème : abandon utilisateur. Solution : parcours optimisé. Résultat : rétention.",
-        icon: "/illustrations/service-ux.svg",
-      },
-    ],
-  },
-];
+import { motion } from "framer-motion";
 
-const stats = [
-  { value: "+20", label: "Sites e-commerce réalisés", image: "/illustrations/stat-commerce.svg" },
-  { value: "+80", label: "Branding graphiques réalisés", image: "/illustrations/stat-branding.svg" },
-  { value: "+30", label: "Applications web réalisées", image: "/illustrations/stat-web.svg" },
-  { value: "+15", label: "Applications mobiles réalisées", image: "/illustrations/stat-mobile.svg" },
-];
-
-const aboutCards = [
-  {
-    title: "Notre mission",
-    text:
-      "Clarifier vos objectifs, cadrer un plan actionnable et livrer des solutions utiles à votre business.",
-    image: "/illustrations/mission.svg",
-  },
-  {
-    title: "Nos objectifs",
-    text:
-      "Créer de la valeur mesurable : plus de demandes, plus de confiance, plus de conversions.",
-    image: "/illustrations/objectives.svg",
-  },
-];
-
-const processCards = [
-  {
-    title: "Découvrir",
-    text: "Nous explorons votre vision, réfléchissons à vos idées et apprenons vos besoins.",
-  },
-  {
-    title: "Conseiller",
-    text: "Nous proposons des solutions qui alignent vos objectifs avec vos ressources.",
-  },
-  {
-    title: "Développer",
-    text: "Nous mettons en œuvre votre solution avec un objectif clairement défini.",
-  },
-  {
-    title: "Analyser",
-    text: "Nous suivons et testons vos KPI pour analyser les performances.",
-  },
-  {
-    title: "Optimiser",
-    text: "Nous ajustons votre stratégie pour faire progresser votre vision.",
-  },
-];
-
-const trustLogos = [
-  "CADViewer",
-  "Trovavia",
-  "Wizup",
-  "Origame",
-  "Discover",
-  "MyNO7",
-  "Digital Success",
-  "Cooltchop",
-  "PKF",
-  "Privethique",
-];
-
-export const metadata = {
-  title: "Nos services – MKCM Consult",
-  description: "Découvrez les services numériques et sécurisés proposés par MKCM Consult.",
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0 },
 };
 
 export default function ServicesPage() {
   return (
-    <main>
-      <section id="collaboration" style={{ backgroundColor: "#ffffff" }}>
-        <div style={{ maxWidth: 1160, margin: "0 auto", padding: "96px 24px", display: "grid", gap: 48, gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", alignItems: "center" }}>
-          <div>
-            <h1 style={{ fontSize: 44, margin: 0, lineHeight: 1.1, color: "#101418" }}>
-              Nous avons tout ce dont vous avez besoin
+    <main className="bg-white text-gray-900 overflow-hidden">
+
+      {/* ================= HERO ================= */}
+      <section className="relative py-[120px] bg-gradient-to-br from-orange-500 to-orange-600 text-white">
+        <div className="max-w-[1280px] mx-auto px-8 grid lg:grid-cols-2 gap-20 items-center">
+          <motion.div initial="hidden" animate="visible" variants={fadeUp} transition={{ duration: 0.6 }}>
+            <span className="uppercase tracking-widest text-sm opacity-80">
+              Nos expertises
+            </span>
+            <h1 className="text-5xl xl:text-6xl font-extrabold leading-tight mt-4 mb-6">
+              Des solutions digitales <br /> pensées pour durer
             </h1>
-            <p style={{ marginTop: 18, color: "#5c6b79", lineHeight: 1.7 }}>
-              Nous nous occupons de la création de votre identité numérique, de votre site web, de votre image de marque
-              et de votre communication digitale afin d’améliorer la performance de votre entreprise.
+            <p className="text-lg leading-relaxed max-w-xl mb-10">
+              Nous accompagnons les entreprises ambitieuses dans la conception,
+              le développement et l’optimisation de produits digitaux performants,
+              sécurisés et évolutifs.
             </p>
-            <a
-              href="#contact"
-              style={{
-                display: "inline-block",
-                marginTop: 24,
-                backgroundColor: "#ff7a59",
-                color: "#ffffff",
-                padding: "12px 28px",
-                borderRadius: 12,
-                fontWeight: 600,
-              }}
-            >
+            <button className="bg-white text-orange-600 font-semibold px-8 py-4 rounded-xl shadow-lg hover:scale-105 transition">
               Demander un devis
-            </a>
+            </button>
+          </motion.div>
+
+          <motion.img
+            src="/services-hero.png"
+            alt="Services illustration"
+            className="w-full max-w-xl mx-auto"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6 }}
+          />
+        </div>
+      </section>
+
+      {/* ================= DOMAINES ================= */}
+      <section className="py-[110px]">
+        <div className="max-w-[1280px] mx-auto px-8">
+          <motion.h2
+            className="text-4xl font-bold mb-16"
+            initial="hidden"
+            whileInView="visible"
+            variants={fadeUp}
+            viewport={{ once: true }}
+          >
+            Nos domaines d’intervention
+          </motion.h2>
+
+          <div className="grid lg:grid-cols-3 gap-10">
+            {[
+              {
+                title: "Développement Web & Mobile",
+                desc: "Applications web modernes, plateformes métier et solutions mobiles performantes.",
+              },
+              {
+                title: "IT Consulting & Architecture",
+                desc: "Conseil stratégique, audit technique et accompagnement à la décision.",
+              },
+              {
+                title: "Cybersécurité & Performance",
+                desc: "Sécurisation des systèmes, audits, bonnes pratiques et optimisation continue.",
+              },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                className="p-10 border rounded-2xl hover:shadow-xl transition"
+                initial="hidden"
+                whileInView="visible"
+                variants={fadeUp}
+                viewport={{ once: true }}
+              >
+                <h3 className="text-2xl font-semibold mb-4">{item.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{item.desc}</p>
+              </motion.div>
+            ))}
           </div>
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <Image
-              src="/illustrations/services-hero.svg"
-              alt=""
-              width={480}
-              height={320}
-              style={{ width: "100%", height: "auto", maxWidth: 420 }}
-              priority
+        </div>
+      </section>
+
+      {/* ================= FOCUS SERVICES ================= */}
+      <section className="py-[110px] bg-gray-50">
+        <div className="max-w-[1280px] mx-auto px-8">
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
+            <motion.div initial="hidden" whileInView="visible" variants={fadeUp} viewport={{ once: true }}>
+              <h2 className="text-4xl font-bold mb-6">
+                Une approche orientée résultats
+              </h2>
+              <p className="text-gray-700 leading-relaxed mb-6">
+                Chaque projet est conçu avec une vision long terme. Nous combinons
+                expertise technique, compréhension métier et exigence qualité
+                pour livrer des solutions robustes et évolutives.
+              </p>
+              <ul className="space-y-4 text-gray-700">
+                <li>✔ Analyse métier approfondie</li>
+                <li>✔ Choix technologiques maîtrisés</li>
+                <li>✔ Sécurité intégrée dès la conception</li>
+                <li>✔ Accompagnement post-livraison</li>
+              </ul>
+            </motion.div>
+
+            <motion.img
+              src="/focus-services.png"
+              className="w-full max-w-lg mx-auto"
+              initial={{ opacity: 0, x: 60 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
             />
           </div>
         </div>
       </section>
 
-      {serviceSections.map((section) => (
-        <section key={section.title} style={{ backgroundColor: "#ffffff" }}>
-          <div style={{ maxWidth: 1160, margin: "0 auto", padding: "72px 24px" }}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 24, flexWrap: "wrap" }}>
-              <div>
-                <h2 style={{ margin: 0, fontSize: 28 }}>{section.title}</h2>
-                <p style={{ marginTop: 12, maxWidth: 520, color: "#5c6b79", lineHeight: 1.7 }}>{section.description}</p>
+      {/* ================= CHIFFRES ================= */}
+      <section className="py-[110px]">
+        <div className="max-w-[1280px] mx-auto px-8 grid md:grid-cols-4 gap-10">
+          {[
+            { value: "+20", label: "Sites e-commerce livrés" },
+            { value: "+80", label: "Identités graphiques créées" },
+            { value: "+30", label: "Applications web déployées" },
+            { value: "+15", label: "Applications mobiles livrées" },
+          ].map((stat, i) => (
+            <motion.div
+              key={i}
+              className="text-center p-10 rounded-2xl bg-gray-50"
+              initial="hidden"
+              whileInView="visible"
+              variants={fadeUp}
+              viewport={{ once: true }}
+            >
+              <div className="text-5xl font-extrabold text-orange-500 mb-3">
+                {stat.value}
               </div>
-              <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                <div style={{ width: 36, height: 36, borderRadius: "50%", border: "1px solid #cbd5e1", display: "grid", placeItems: "center", color: "#94a3b8" }}>←</div>
-                <span style={{ color: "#5c6b79", fontSize: 14 }}>1 - 3</span>
-                <div style={{ width: 36, height: 36, borderRadius: "50%", border: "1px solid #ff7a59", display: "grid", placeItems: "center", color: "#ff7a59" }}>→</div>
-              </div>
-            </div>
+              <p className="text-gray-600">{stat.label}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
 
-            <div style={{ marginTop: 32, display: "grid", gap: 20, gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))" }}>
-              {section.cards.map((card) => (
-                <div
-                  key={card.title}
-                  style={{
-                    border: "1px solid rgba(16, 20, 24, 0.16)",
-                    borderRadius: 18,
-                    padding: 28,
-                    backgroundColor: "#ffffff",
-                    textAlign: "center",
-                    display: "grid",
-                    gap: 16,
-                  }}
-                  className="card-hover"
+      {/* ================= PROCESS ================= */}
+      <section className="py-[120px] bg-orange-50">
+        <div className="max-w-[1280px] mx-auto px-8">
+          <h2 className="text-4xl font-bold text-center mb-16">
+            Notre méthodologie
+          </h2>
+
+          <div className="grid md:grid-cols-5 gap-6">
+            {["Découvrir", "Conseiller", "Développer", "Analyser", "Optimiser"].map(
+              (step, i) => (
+                <motion.div
+                  key={i}
+                  className="bg-white p-8 rounded-xl shadow-md text-center"
+                  initial="hidden"
+                  whileInView="visible"
+                  variants={fadeUp}
+                  viewport={{ once: true }}
                 >
-                  <Image src={card.icon} alt="" width={64} height={64} style={{ margin: "0 auto" }} />
-                  <h3 style={{ margin: 0, fontSize: 18, color: "#2d3640" }}>{card.title}</h3>
-                  <p style={{ margin: 0, color: "#5c6b79", lineHeight: 1.6, fontSize: 14 }}>{card.text}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      ))}
-
-      <section style={{ backgroundColor: "#ffffff" }}>
-        <div style={{ maxWidth: 1160, margin: "0 auto", padding: "72px 24px" }}>
-          <div style={{ textAlign: "center" }}>
-            <p style={{ textTransform: "uppercase", letterSpacing: "0.22em", fontSize: 12, color: "#5c6b79" }}>
-              En savoir plus sur nous
-            </p>
-            <h2 style={{ fontSize: 32, margin: "16px 0" }}>Un accompagnement fiable et humain.</h2>
-          </div>
-          <div
-            style={{
-              marginTop: 32,
-              display: "grid",
-              gap: 24,
-              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-            }}
-          >
-            {aboutCards.map((card) => (
-              <div
-                key={card.title}
-                style={{
-                  backgroundColor: "#f8f6f2",
-                  borderRadius: 24,
-                  padding: 28,
-                  border: "1px solid rgba(16, 20, 24, 0.08)",
-                  display: "grid",
-                  gap: 16,
-                  textAlign: "center",
-                }}
-                className="card-hover"
-              >
-                <Image
-                  src={card.image}
-                  alt=""
-                  width={220}
-                  height={160}
-                  style={{ width: "100%", height: "auto", maxWidth: 220, margin: "0 auto" }}
-                />
-                <h3 style={{ margin: 0, fontSize: 20 }}>{card.title}</h3>
-                <p style={{ margin: 0, color: "#5c6b79", lineHeight: 1.6 }}>{card.text}</p>
-              </div>
-            ))}
+                  <div className="text-orange-500 font-bold mb-4">
+                    0{i + 1}
+                  </div>
+                  <h4 className="font-semibold">{step}</h4>
+                </motion.div>
+              )
+            )}
           </div>
         </div>
       </section>
 
-      <section style={{ backgroundColor: "#ffffff" }}>
-        <div style={{ maxWidth: 1160, margin: "0 auto", padding: "72px 24px" }}>
-          <h2 style={{ textAlign: "center", margin: 0, fontSize: 32 }}>Notre collaboration</h2>
-          <p style={{ marginTop: 16, color: "#5c6b79", lineHeight: 1.7 }}>
-            Une méthode simple, rassurante et professionnelle pour sécuriser votre projet.
-          </p>
-          <div
-            style={{
-              marginTop: 32,
-              display: "grid",
-              gap: 18,
-              gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
-            }}
-          >
-            {processCards.map((card) => (
-              <div
-                key={card.title}
-                style={{
-                  backgroundColor: "#8fa6b1",
-                  borderRadius: 16,
-                  padding: 20,
-                  color: "#ffffff",
-                  display: "grid",
-                  gap: 12,
-                }}
-                className="card-hover"
-              >
-                <div
-                  style={{
-                    width: 36,
-                    height: 36,
-                    borderRadius: 10,
-                    backgroundColor: "rgba(255,255,255,0.2)",
-                    display: "grid",
-                    placeItems: "center",
-                  }}
-                >
-                  ★
-                </div>
-                <h3 style={{ margin: 0, fontSize: 18 }}>{card.title}</h3>
-                <p style={{ margin: 0, fontSize: 13, lineHeight: 1.6 }}>{card.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section style={{ backgroundColor: "#ffffff" }}>
-        <div style={{ maxWidth: 1160, margin: "0 auto", padding: "72px 24px" }}>
-          <div style={{ display: "grid", gap: 20, gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))" }}>
-            {stats.map((stat) => (
-              <div
-                key={stat.label}
-                style={{
-                  backgroundColor: "#ffffff",
-                  borderRadius: 18,
-                  border: "1px solid rgba(16, 20, 24, 0.08)",
-                  padding: 24,
-                  textAlign: "center",
-                  display: "grid",
-                  gap: 12,
-                }}
-                className="card-hover"
-              >
-                <Image
-                  src={stat.image}
-                  alt=""
-                  width={160}
-                  height={120}
-                  style={{ width: "100%", height: "auto", maxWidth: 160, margin: "0 auto" }}
-                />
-                <div style={{ fontSize: 36, color: "#ff7a59", fontWeight: 700 }}>{stat.value}</div>
-                <div style={{ color: "#5c6b79" }}>{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section style={{ backgroundColor: "#ffffff" }}>
-        <div style={{ maxWidth: 1160, margin: "0 auto", padding: "72px 24px" }}>
-          <h2 style={{ textAlign: "center", margin: 0, fontSize: 32 }}>Ils nous font confiance</h2>
-          <div
-            style={{
-              marginTop: 28,
-              display: "grid",
-              gap: 16,
-              gridTemplateColumns: "repeat(auto-fit, minmax(120px, 1fr))",
-              alignItems: "center",
-            }}
-          >
-            {trustLogos.map((logo) => (
-              <div
-                key={logo}
-                style={{
-                  backgroundColor: "#f8f6f2",
-                  borderRadius: 12,
-                  padding: "16px",
-                  textAlign: "center",
-                  fontWeight: 700,
-                  color: "#2d3640",
-                }}
-                className="card-hover"
-              >
-                {logo}
-              </div>
-            ))}
-          </div>
-        </div>
+      {/* ================= CTA ================= */}
+      <section className="py-[120px] text-center bg-gray-900 text-white">
+        <h2 className="text-4xl font-extrabold mb-6">
+          Parlons de votre projet
+        </h2>
+        <p className="max-w-xl mx-auto mb-10 text-gray-300">
+          Vous avez une idée, un besoin ou un projet en cours ?
+          Discutons ensemble de la meilleure solution.
+        </p>
+        <button className="bg-orange-500 px-10 py-4 rounded-xl font-semibold hover:scale-105 transition">
+          Nous contacter
+        </button>
       </section>
 
     </main>
