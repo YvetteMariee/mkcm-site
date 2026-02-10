@@ -1,68 +1,55 @@
+import Link from "next/link";
+
+const navLinks = [
+  { href: "/", label: "Accueil" },
+  { href: "/services", label: "Services" },
+  { href: "/it-consulting", label: "IT Consulting" },
+  { href: "/formation", label: "Formation" },
+  { href: "/carriere", label: "Carrière" },
+  { href: "/nous", label: "Nous" },
+];
+
 export default function Footer() {
   return (
-    <footer
-      style={{
-        backgroundColor: "#0b141a",
-        color: "#d6dde3",
-      }}
-    >
-      <div
-        style={{
-          maxWidth: 1160,
-          margin: "0 auto",
-          padding: "64px 24px",
-          display: "grid",
-          gap: 32,
-          gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-        }}
-      >
-        <div>
-          <div style={{ fontWeight: 800, color: "#ffffff", fontSize: 20 }}>MKCM</div>
-          <p style={{ marginTop: 12, lineHeight: 1.6, fontSize: 13 }}>
-            Nous offrons des services de haute qualité en utilisant des technologies modernes
-            pour accélérer votre croissance.
+    <footer className="border-t border-[#1f3779] bg-[#050b1d] text-white/80">
+      <div className="mx-auto grid max-w-6xl gap-10 px-6 py-14 md:grid-cols-12">
+        <div className="md:col-span-5">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#26e0ff]">MKCM Digital Factory</p>
+          <h3 className="mt-3 text-2xl font-semibold leading-tight text-white">
+            Développement web, logiciels métiers et solutions cloud sécurisées.
+          </h3>
+          <p className="mt-4 max-w-md text-sm leading-7 text-white/70">
+            Nous construisons des produits numériques performants grâce à une expertise full-stack,
+            DevOps, cybersécurité et UX/UI orientée business.
           </p>
         </div>
-        <div>
-          <div style={{ fontWeight: 700, marginBottom: 12 }}>Liens utiles</div>
-          <div style={{ display: "grid", gap: 8, fontSize: 13 }}>
-            <a href="/">Accueil</a>
-            <a href="/services">Services</a>
-            <a href="/methodes">Méthode</a>
-            <a href="/realisations">Réalisations</a>
-            <a href="/a-propos">À propos</a>
-            <a href="/contact">Contact</a>
-          </div>
+
+        <div className="md:col-span-3">
+          <h4 className="text-sm font-semibold uppercase tracking-[0.18em] text-white">Navigation</h4>
+          <ul className="mt-4 grid gap-2 text-sm">
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                <Link href={link.href} className="transition hover:text-[#26e0ff]">
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
-        <div>
-          <div style={{ fontWeight: 700, marginBottom: 12 }}>Contact</div>
-          <div style={{ display: "grid", gap: 8, fontSize: 13 }}>
-            <div>support@mkcm-consulting.com</div>
-            <div>(+237) 6 52 71 04 32</div>
-            <div>Douala, Cameroun</div>
-          </div>
-        </div>
-        <div style={{ backgroundColor: "#ffffff", borderRadius: 12, overflow: "hidden" }}>
-          <iframe
-            title="map"
-            src="https://www.google.com/maps?q=Douala&output=embed"
-            width="100%"
-            height="200"
-            style={{ border: 0 }}
-            loading="lazy"
-          />
+
+        <div className="md:col-span-4">
+          <h4 className="text-sm font-semibold uppercase tracking-[0.18em] text-white">Pôles Tech</h4>
+          <ul className="mt-4 grid gap-2 text-sm leading-6 text-white/70">
+            <li>⚙️ Développement Full-Stack</li>
+            <li>☁️ Cloud & DevOps</li>
+            <li>🛡️ Cybersécurité applicative</li>
+            <li>📊 Data, dashboards & performance</li>
+          </ul>
         </div>
       </div>
-      <div
-        style={{
-          textAlign: "center",
-          padding: "16px 24px",
-          fontSize: 12,
-          color: "#94a3b8",
-          borderTop: "1px solid rgba(255,255,255,0.08)",
-        }}
-      >
-        Copyright © {new Date().getFullYear()} MKCM. Tous droits réservés.
+
+      <div className="border-t border-white/10 px-6 py-4 text-center text-xs text-white/60">
+        © {new Date().getFullYear()} MKCM Consulting — Société IT & Digital.
       </div>
     </footer>
   );

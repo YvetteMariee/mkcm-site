@@ -2,13 +2,10 @@ import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://example.vercel.app";
+  const routes = ["", "/services", "/it-consulting", "/formation", "/carriere", "/nous"];
 
-  return [
-    { url: `${baseUrl}/`, lastModified: new Date() },
-    { url: `${baseUrl}/services`, lastModified: new Date() },
-    { url: `${baseUrl}/methodes`, lastModified: new Date() },
-    { url: `${baseUrl}/contact`, lastModified: new Date() },
-    { url: `${baseUrl}/a-propos`, lastModified: new Date() },
-    { url: `${baseUrl}/realisations`, lastModified: new Date() },
-  ];
+  return routes.map((route) => ({
+    url: `${baseUrl}${route}`,
+    lastModified: new Date(),
+  }));
 }
