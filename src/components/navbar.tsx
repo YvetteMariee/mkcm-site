@@ -1,111 +1,99 @@
 "use client";
+
 import Image from "next/image";
-
-
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
+
+const links = [
+  { href: "/", label: "Accueil" },
+  { href: "/services", label: "Services" },
+  { href: "/it-consulting", label: "IT Consulting" },
+  { href: "/formation", label: "Formation" },
+  { href: "/carriere", label: "Carrière" },
+  { href: "/nous", label: "Nous" },
+];
 
 export default function Navbar() {
   const pathname = usePathname();
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header style={{ width: "100%", backgroundColor: "#f58220" }}>
-      <nav
-        style={{
-          maxWidth: 1160,
-          margin: "0 auto",
-          padding: "16px 24px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-        }}
-      >
-      
-      {/* Logo */}
-<Link href="/">
-  <Image
-    src="/logo-mkcm.svg"
-    alt="MKCM Consulting Services"
-    width={180}
-    height={50}
-    priority
-    
-  />
-</Link>
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-brand-dark/95 backdrop-blur">
+      <nav className="mx-auto max-w-6xl px-6 py-4">
+        <div className="flex items-center justify-between gap-4">
+          <Link href="/" className="shrink-0" onClick={() => setMobileOpen(false)}>
+            <Image src="/logo-mkcm.svg" alt="MKCM Consulting" width={176} height={52} priority />
+          </Link>
 
+          <button
+            type="button"
+            onClick={() => setMobileOpen((prev) => !prev)}
+            className="rounded-md border border-white/20 px-3 py-2 text-xs font-semibold uppercase tracking-wider text-white md:hidden"
+            aria-expanded={mobileOpen}
+            aria-label="Ouvrir le menu"
+          >
+            Menu
+          </button>
 
-
-        {/* Menu */}
-        <div style={{ display: "flex", gap: 24, flexWrap: "wrap" }}>
-          <NavItem label="Accueil" href="/" active={pathname === "/"} />
-          <NavItem
-            label="Services"
-            href="/services"
-            active={pathname === "/services"}
-          />
-          <NavItem
-            label="Méthode"
-            href="/methodes"
-            active={pathname === "/methodes"}
-          />
-          <NavItem
-            label="Réalisations"
-            href="/realisations"
-            active={pathname === "/realisations"}
-          />
-          <NavItem
-            label="À propos"
-            href="/a-propos"
-            active={pathname === "/a-propos"}
-          />
-          <NavItem
-            label="Contact"
-            href="/contact"
-            active={pathname === "/contact"}
-          />
+          <div className="hidden items-center gap-2 text-sm font-medium text-white/90 md:flex">
+            {links.map((link) => (
+              <NavLink
+                key={link.href}
+                href={link.href}
+                label={link.label}
+                active={isActive(pathname, link.href)}
+              />
+            ))}
+          </div>
         </div>
+
+        {mobileOpen ? (
+          <div className="mt-4 grid gap-2 rounded-xl border border-white/10 bg-white/5 p-3 md:hidden">
+            {links.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setMobileOpen(false)}
+                className={`rounded-lg px-3 py-2 text-sm font-medium ${
+                  isActive(pathname, link.href)
+                    ? "bg-brand-orange text-white"
+                    : "text-white/90 hover:bg-white/10"
+                }`}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+        ) : null}
       </nav>
     </header>
   );
 }
 
-function NavItem({
-  label,
+function NavLink({
   href,
+  label,
   active,
 }: {
-  label: string;
   href: string;
+  label: string;
   active: boolean;
 }) {
   return (
     <Link
       href={href}
-      style={{
-        color: "white",
-        textDecoration: "none",
-        fontSize: 16,
-        fontWeight: 600,
-        position: "relative",
-        paddingBottom: 6,
-      }}
+      className={`rounded-full px-4 py-2 transition ${
+        active ? "bg-brand-orange text-white" : "hover:bg-white/10"
+      }`}
     >
       {label}
-
-      {active && (
-        <span
-          style={{
-            position: "absolute",
-            left: "50%",
-            bottom: 0,
-            transform: "translateX(-50%)",
-            width: 18,
-            height: 4,
-            backgroundColor: "white",
-            borderRadius: 999,
-          }}
-        />
-      )}
     </Link>
   );
+}
+
+
+function isActive(pathname: string, href: string) {
+  if (href === "/") return pathname === "/";
+  return pathname === href || pathname.startsWith(`${href}/`);
 }
