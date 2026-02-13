@@ -22,13 +22,25 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 border-b border-[#28428d] bg-[#070f25]/95 backdrop-blur">
       <nav className="mx-auto max-w-6xl px-6 py-4">
         <div className="flex items-center justify-between gap-4">
-          <Link
-            href="/"
-            className="rounded-xl bg-white px-3 py-2 shadow-[0_0_30px_rgba(38,224,255,0.2)]"
-            onClick={() => setMobileOpen(false)}
-          >
-            <Image src="/logo-mkcm.svg" alt="MKCM Consulting" width={198} height={60} priority />
-          </Link>
+         <Link
+  href="/"
+  onClick={() => setMobileOpen(false)}
+  className="flex items-center"
+>
+  <div className="flex flex-col items-center leading-tight text-center">
+    <span className="text-white font-bold text-2xl tracking-wide">
+      MK
+      <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+        CM
+      </span>
+    </span>
+
+    <span className="text-cyan-400 text-xs tracking-[0.2em] uppercase mt-1">
+      Consulting Services
+    </span>
+  </div>
+</Link>
+
 
           <button
             type="button"
